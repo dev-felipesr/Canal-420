@@ -1,0 +1,4 @@
+repository "Canal 420/Canal 420@4674130486299@cloud"
+  path "/"
+    br "/main"
+    co "/main"
