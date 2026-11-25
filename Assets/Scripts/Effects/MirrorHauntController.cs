@@ -444,7 +444,7 @@ namespace Canal420.Effects
                 {
                     InteractionSystem.Instance.ShowSubtitle(
                         doorWasPhysicallyClosed
-                            ? "No espelho a porta tava entreaberta... Ela tá fechada."
+                            ? "Ué... no espelho ela tava aberta."
                             : "No espelho a porta tava quase fechada...",
                         4.2f
                     );
@@ -721,7 +721,7 @@ namespace Canal420.Effects
                 if (InteractionSystem.Instance != null)
                 {
                     InteractionSystem.Instance.ShowSubtitle(
-                        "Tinha alguém parado na porta... Não tem ninguém aqui.",
+                        "Espera... tinha alguém na porta.",
                         4.6f
                     );
                 }

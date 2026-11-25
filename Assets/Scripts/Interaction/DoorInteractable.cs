@@ -22,9 +22,9 @@ namespace Canal420.Interaction
         [SerializeField] private string closePrompt = "Fechar porta";
         [SerializeField] private string lockedPrompt = "Abrir porta";
         [TextArea(2, 3)]
-        [SerializeField] private string lockedSubtitle = "Está trancada.";
+        [SerializeField] private string lockedSubtitle = "Tá trancada.";
         [TextArea(2, 3)]
-        [SerializeField] private string unlockedSubtitle = "Destranquei a porta.";
+        [SerializeField] private string unlockedSubtitle = "Abriu.";
 
         [Header("Eventos Narrativos")]
         [SerializeField] private UnityEvent onLockedAttempt;
@@ -39,6 +39,7 @@ namespace Canal420.Interaction
         private bool isOpen = false;
         private bool canInteract = true;
         private bool isPartiallyAjar = false;
+        private bool suppressDefaultLockedSubtitle = false;
         private float closedYaw;
         private float currentYaw;
         private float defaultOpenAngle = 90f;
@@ -314,7 +315,7 @@ namespace Canal420.Interaction
                     Canal420AudioManager.Instance.PlayFoley3D(FoleySoundId.DoorLocked, soundPos, 0.85f);
                 }
 
-                if (InteractionSystem.Instance != null && !string.IsNullOrWhiteSpace(lockedSubtitle))
+                if (!suppressDefaultLockedSubtitle && InteractionSystem.Instance != null && !string.IsNullOrWhiteSpace(lockedSubtitle))
                 {
                     InteractionSystem.Instance.ShowSubtitle(lockedSubtitle, 4.8f);
                 }
@@ -472,6 +473,7 @@ namespace Canal420.Interaction
         {
             EnsureInitialized();
             canInteract = true;
+            suppressDefaultLockedSubtitle = false;
             isLocked = locked;
             canUnlockWithSafeKey = allowSafeKey;
             requiredKeyItemId = keyItemId ?? string.Empty;
@@ -501,8 +503,8 @@ namespace Canal420.Interaction
             float targetOpenAngle,
             bool locked,
             bool allowSafeKey,
-            string lockedMsg = "Está trancada.",
-            string unlockedMsg = "Destranquei a porta.",
+            string lockedMsg = "Tá trancada.",
+            string unlockedMsg = "Abriu.",
             string keyItemId = "",
             float doorLeafWidth = -1f)
         {
@@ -572,6 +574,11 @@ namespace Canal420.Interaction
         public void SetInteractable(bool enabledState)
         {
             canInteract = enabledState;
+        }
+
+        public void SetSuppressDefaultLockedSubtitle(bool suppress)
+        {
+            suppressDefaultLockedSubtitle = suppress;
         }
     }
 }

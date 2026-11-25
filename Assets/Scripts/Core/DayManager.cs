@@ -845,14 +845,14 @@ namespace Canal420.Core
 
             if (!InventoryState.HasItem("lanterna_dia3"))
             {
-                blockedReason = "Tá escuro demais pra mexer nisso agora. A lanterna tá na primeira gaveta da cozinha.";
+                blockedReason = "Não dá pra ver nada aqui. Preciso da lanterna.";
                 if (objectiveHUD != null) objectiveHUD.PromoteObjectiveToFront("pegar_lanterna_dia3");
                 return true;
             }
 
             if (!day3MandatoryPillTaken)
             {
-                blockedReason = "Minha vista tá escurecendo de novo... Se eu não tomar aquelas pílulas na mesa da sala, vou apagar aqui.";
+                blockedReason = "Minha vista tá escurecendo de novo... preciso tomar aquelas pílulas na sala antes que eu apague.";
                 if (objectiveHUD != null)
                 {
                     objectiveHUD.SetObjectiveVisible("engolir_capsula_dia3", true);
@@ -875,7 +875,7 @@ namespace Canal420.Core
 
             if (!InventoryState.HasItem("lanterna_dia3"))
             {
-                blockedReason = "Tá escuro demais pra mexer nesses remédios agora. Preciso pegar a lanterna na gaveta da cozinha primeiro.";
+                blockedReason = "Tá escuro demais, não consigo nem ver o que tô pegando.";
                 if (objectiveHUD != null) objectiveHUD.PromoteObjectiveToFront("pegar_lanterna_dia3");
                 return false;
             }
@@ -1396,7 +1396,7 @@ namespace Canal420.Core
                 if (InteractionSystem.Instance != null)
                 {
                     InteractionSystem.Instance.ShowSubtitle(
-                        "Trancada... A madeira inchada estala com a umidade.",
+                        "Tá trancada... não vai abrir.",
                         4.6f
                     );
                 }
@@ -1421,7 +1421,7 @@ namespace Canal420.Core
             if (InteractionSystem.Instance != null)
             {
                 InteractionSystem.Instance.ShowSubtitle(
-                    "Não tem ninguém aí dentro... Preciso voltar pra sala.",
+                    "Não tem ninguém aí dentro...",
                     5.2f
                 );
             }
@@ -1478,7 +1478,21 @@ namespace Canal420.Core
 
         private IEnumerator DelayedDay2TVActivationRoutine(float delaySeconds)
         {
-            yield return new WaitForSeconds(Mathf.Max(0.4f, delaySeconds));
+            yield return null;
+            bool waitedForDocument = false;
+            while (InteractionSystem.Instance != null && InteractionSystem.Instance.IsDocumentOpen)
+            {
+                waitedForDocument = true;
+                if (currentDay != GameDay.Day2 || isTransitioning)
+                {
+                    day2TVActivationCoroutine = null;
+                    yield break;
+                }
+                yield return null;
+            }
+
+            float effectiveDelay = waitedForDocument ? Mathf.Max(2.80f, delaySeconds) : Mathf.Max(0.4f, delaySeconds);
+            yield return new WaitForSeconds(effectiveDelay);
             day2TVActivationCoroutine = null;
             if (currentDay == GameDay.Day2 && !isTransitioning && tvController != null)
             {
@@ -1691,7 +1705,7 @@ namespace Canal420.Core
 
                     if (!completedDay1Tasks.Contains(req))
                     {
-                        blockedReason = "Se eu sentar agora, eu apago. Preciso resolver o que ficou pendente antes.";
+                        blockedReason = "Se eu sentar agora eu vou apagar. Melhor resolver o resto antes.";
                         return false;
                     }
                 }
@@ -1700,7 +1714,7 @@ namespace Canal420.Core
             if (!InventoryState.HasItem("pilhas_controle"))
             {
                 missingOnlyBatteries = true;
-                blockedReason = "O botão do painel tá afundado e o controle morreu. Acho que tem pilha naquela lanterna velha da cozinha.";
+                blockedReason = "O controle tá sem pilha... acho que tem na lanterna da cozinha.";
                 return false;
             }
 
@@ -2326,7 +2340,10 @@ namespace Canal420.Core
                         officeDoor.ConfigureLockState(locked: false, allowSafeKey: false, forceCloseImmediately: false);
 
                     if (corridorLockedDoor != null)
+                    {
                         corridorLockedDoor.ConfigureLockState(locked: true, allowSafeKey: false, forceCloseImmediately: true);
+                        corridorLockedDoor.SetSuppressDefaultLockedSubtitle(true);
+                    }
 
                     if (player != null)
                     {
@@ -3199,6 +3216,28 @@ namespace Canal420.Core
             }
         }
 
+        private static Transform FindDescendant(Transform root, string exactName)
+        {
+            if (root == null || string.IsNullOrEmpty(exactName)) return null;
+            Transform direct = root.Find(exactName);
+            if (direct != null) return direct;
+
+            for (int i = 0; i < root.childCount; i++)
+            {
+                Transform child = root.GetChild(i);
+                if (child.name == exactName) return child;
+                Transform found = FindDescendant(child, exactName);
+                if (found != null) return found;
+            }
+            return null;
+        }
+
+        private static Transform FindDescendantChild(Transform root, string parentName, string childName)
+        {
+            Transform parent = FindDescendant(root, parentName);
+            return parent != null ? parent.Find(childName) : null;
+        }
+
         private void SyncAppliancePowerIndicators(GameDay day, bool blackoutOverride)
         {
             if (casaBase == null) return;
@@ -3206,13 +3245,13 @@ namespace Canal420.Core
             bool livingRoomPowered = !blackoutOverride && (day == GameDay.Day1 || day == GameDay.Day2);
             bool bedroomPowered = !blackoutOverride && day != GameDay.Day4_Prelude;
 
-            Transform tvLed = casaBase.transform.Find("TV_Sala/LED_Standby_TV");
+            Transform tvLed = FindDescendantChild(casaBase.transform, "TV_Sala", "LED_Standby_TV");
             ApplyEmissiveBlock(tvLed, livingRoomPowered, new Color(0.95f, 0.10f, 0.08f), 1.35f, new Color(0.14f, 0.05f, 0.05f, 1f));
 
-            Transform vcrVisor = casaBase.transform.Find("Rack_TV/Visor_VCR");
+            Transform vcrVisor = FindDescendantChild(casaBase.transform, "Rack_TV", "Visor_VCR");
             ApplyEmissiveBlock(vcrVisor, livingRoomPowered, new Color(0.18f, 0.55f, 0.22f), 1.15f, new Color(0.05f, 0.07f, 0.06f, 1f));
 
-            Transform alarm = casaBase.transform.Find("Despertador_CriadoMudo");
+            Transform alarm = FindDescendant(casaBase.transform, "Despertador_CriadoMudo");
             if (alarm != null && blackoutOverride && alarm.TryGetComponent<AnalogClockController>(out AnalogClockController alarmClock))
             {
                 alarmClock.SetRunning(false);
@@ -3223,7 +3262,7 @@ namespace Canal420.Core
         {
             if (casaBase == null) return;
 
-            Transform alarmTr = casaBase.transform.Find("Despertador_CriadoMudo");
+            Transform alarmTr = FindDescendant(casaBase.transform, "Despertador_CriadoMudo");
             if (alarmTr != null && alarmTr.TryGetComponent<AnalogClockController>(out AnalogClockController alarmClock))
             {
                 switch (day)
@@ -3243,7 +3282,7 @@ namespace Canal420.Core
                 }
             }
 
-            Transform alarmSpotTr = casaBase.transform.Find("Despertador_Interagir");
+            Transform alarmSpotTr = FindDescendant(casaBase.transform, "Despertador_Interagir");
             if (alarmSpotTr != null && alarmSpotTr.TryGetComponent<InspectableObject>(out InspectableObject alarmInsp))
             {
                 switch (day)
@@ -3252,7 +3291,7 @@ namespace Canal420.Core
                         alarmInsp.ConfigureTask(
                             id: "despertador_quarto_opc",
                             prompt: "Olhar o despertador",
-                            subtitle: "Cinco e quarenta. Olho pra esse relógio toda hora esperando dar segunda.",
+                            subtitle: "Cinco e quarenta. Já parece tarde da noite.",
                             repeatSubtitle: "Cinco e quarenta.",
                             linear: false,
                             sound: FoleySoundId.MetalInspect
@@ -3262,8 +3301,8 @@ namespace Canal420.Core
                         alarmInsp.ConfigureTask(
                             id: "despertador_quarto_opc",
                             prompt: "Olhar o despertador",
-                            subtitle: "Passa das dez da manhã... O expediente no escritório já começou faz tempo.",
-                            repeatSubtitle: "Dez e quinze. Nem liguei pra avisar.",
+                            subtitle: "Já passa das dez... perdi a hora do escritório.",
+                            repeatSubtitle: "Dez e quinze. E eu nem liguei pra avisar.",
                             linear: false,
                             sound: FoleySoundId.MetalInspect
                         );
@@ -3272,8 +3311,8 @@ namespace Canal420.Core
                         alarmInsp.ConfigureTask(
                             id: "despertador_quarto_opc",
                             prompt: "Olhar o despertador",
-                            subtitle: "Três e doze... Não sei se é madrugada de terça ou se esse relógio parou faz tempo.",
-                            repeatSubtitle: "Três e doze.",
+                            subtitle: "Três e doze... será que esse relógio parou?",
+                            repeatSubtitle: "Continua marcando três e doze.",
                             linear: false,
                             sound: FoleySoundId.MetalInspect
                         );
@@ -3282,7 +3321,7 @@ namespace Canal420.Core
                 alarmInsp.SetInteractableState(day != GameDay.Day4_Prelude, resetUsedState: true);
             }
 
-            Transform shelfClockTr = casaBase.transform.Find("Estante_Sala/Relogio_Estante_Parado");
+            Transform shelfClockTr = FindDescendantChild(casaBase.transform, "Estante_Sala", "Relogio_Estante_Parado");
             if (shelfClockTr != null && shelfClockTr.TryGetComponent<AnalogClockController>(out AnalogClockController mantleClock))
             {
                 mantleClock.SetClockTime(23, 40, 18f, running: false);
@@ -3313,8 +3352,8 @@ namespace Canal420.Core
                     cachedFrontDoorInspectable.ConfigureTask(
                         id: "porta_rua_opc",
                         prompt: "Olhar a porta da rua",
-                        subtitle: "Duas voltas na chave e corrente passada. Nem um carro passa na rua lá fora... Não abro essa porta pra ninguém.",
-                        repeatSubtitle: "Cheia de folheto sem data acumulado por baixo.",
+                        subtitle: "Duas voltas na chave e a corrente. A rua tá vazia... não vou abrir isso.",
+                        repeatSubtitle: "Cheio de folheto velho por baixo.",
                         linear: false,
                         sound: FoleySoundId.DoorLocked
                     );
@@ -3323,8 +3362,8 @@ namespace Canal420.Core
                     cachedFrontDoorInspectable.ConfigureTask(
                         id: "porta_rua_opc",
                         prompt: "Testar a porta da rua",
-                        subtitle: "A corrente tá esticada e a tranca pesada demais. Mesmo se eu quisesse ir pro escritório, as pernas não obedecem.",
-                        repeatSubtitle: "Duas voltas na chave. A rua parece longe demais.",
+                        subtitle: "A corrente tá travada... e eu nem tenho força pra mexer nisso agora.",
+                        repeatSubtitle: "Não consigo nem pensar em sair na rua.",
                         linear: false,
                         sound: FoleySoundId.DoorLocked
                     );
@@ -3335,8 +3374,8 @@ namespace Canal420.Core
                         cachedFrontDoorInspectable.ConfigureTask(
                             id: "porta_rua_opc",
                             prompt: "Olhar a porta da rua",
-                            subtitle: "Essa chave de latão não é daqui. Eu sei muito bem qual porta ela abre.",
-                            repeatSubtitle: "Não é por aqui que isso acaba.",
+                            subtitle: "Essa chave não é daqui. Eu sei qual porta ela abre.",
+                            repeatSubtitle: "Não é essa porta.",
                             linear: false,
                             sound: FoleySoundId.DoorLocked
                         );
@@ -3346,8 +3385,8 @@ namespace Canal420.Core
                         cachedFrontDoorInspectable.ConfigureTask(
                             id: "porta_rua_opc",
                             prompt: "Forçar a porta da rua",
-                            subtitle: "Não adianta puxar a corrente no escuro... Tudo o que eu escondi tá do outro lado do corredor, não lá fora.",
-                            repeatSubtitle: "A corrente nem cede. Não tem saída por aqui.",
+                            subtitle: "Não adianta tentar abrir agora... não é lá fora que isso vai se resolver.",
+                            repeatSubtitle: "Não vou sair por aqui.",
                             linear: false,
                             sound: FoleySoundId.DoorLocked
                         );
@@ -3661,7 +3700,7 @@ namespace Canal420.Core
                     hesitationThoughtPlayed = true;
                     if (InteractionSystem.Instance != null)
                     {
-                        InteractionSystem.Instance.ShowSubtitle("Abriu... Tá tudo quieto lá dentro.", 3.6f);
+                        InteractionSystem.Instance.ShowSubtitle("Não tem barulho nenhum lá dentro...", 3.6f);
                     }
                 }
 
@@ -3698,7 +3737,7 @@ namespace Canal420.Core
                     }
                     if (InteractionSystem.Instance != null)
                     {
-                        InteractionSystem.Instance.ShowSubtitle("Não dá mais pra voltar pro sofá.", 3.8f);
+                        InteractionSystem.Instance.ShowSubtitle("Não adianta tentar voltar agora.", 3.8f);
                     }
                 }
 
@@ -4140,7 +4179,7 @@ namespace Canal420.Core
             if (InteractionSystem.Instance != null)
             {
                 InteractionSystem.Instance.ShowSubtitle(
-                    "Eu girei a chave pelo lado de fora, tomei dois comprimidos pra não ouvir mais nada... e aumentei o volume da TV.",
+                    "Eu passei a chave por fora... tomei os remédios e deixei a TV alta até não ouvir mais nada.",
                     8.5f
                 );
             }
@@ -4163,7 +4202,7 @@ namespace Canal420.Core
             if (InteractionSystem.Instance != null)
             {
                 InteractionSystem.Instance.ShowSubtitle(
-                    "Não sei mais que ano é hoje... nem se algum dia eu realmente saí dessa sala.",
+                    "Nem sei mais que ano é hoje... acho que eu nunca saí daqui.",
                     7.2f
                 );
             }
@@ -4232,11 +4271,11 @@ namespace Canal420.Core
                     break;
                 case GameDay.Day2:
                     title = "DIA 2";
-                    sub = "Segunda-feira";
+                    sub = "Segunda-feira, 30 de outubro de 1995";
                     break;
                 case GameDay.Day3:
                     title = "DIA 3";
-                    sub = "Terça-feira, madrugada";
+                    sub = "Terça-feira, ?? de ?? de 19??";
                     break;
                 default:
                     title = string.Empty;
@@ -4253,25 +4292,25 @@ namespace Canal420.Core
             {
                 case GameDay.Day1:
                     InteractionSystem.Instance.ShowSubtitle(
-                        "Já escureceu. Apaguei vestido de novo... Preciso jogar uma água no rosto.",
+                        "Já tá escuro... preciso lavar o rosto.",
                         6.0f
                     );
                     break;
                 case GameDay.Day2:
                     InteractionSystem.Instance.ShowSubtitle(
-                        "Que gosto ruim na boca... Quanto daquele remédio eu tomei?",
+                        "Que gosto ruim na boca... que horas são?",
                         6.2f
                     );
                     break;
                 case GameDay.Day3:
                     InteractionSystem.Instance.ShowSubtitle(
-                        "Apaguei aqui no chão... Caiu a força da casa inteira. Que apagão geral... A lanterna tá na primeira gaveta da cozinha.",
+                        "Que que aconteceu?... Acabou a luz. Preciso achar a lanterna.",
                         7.4f
                     );
                     break;
                 case GameDay.Day4_Prelude:
                     InteractionSystem.Instance.ShowSubtitle(
-                        "O cobertor pequeno continua dobrado no pé da cama, do jeito que ela deixou.",
+                        "A coberta ainda tá dobrada no pé da cama, do jeito que ela deixou.",
                         6.4f
                     );
                     break;

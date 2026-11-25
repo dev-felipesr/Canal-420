@@ -109,7 +109,7 @@ namespace Canal420.EditorTools
             Texture2D texCassette = SavePng("Tex_Fita_Cassete_Etiqueta", BuildCassetteLabel());
             Texture2D texVhs0 = SavePng("Tex_Lombada_VHS_0", BuildVhsSpine("NATAL 93 - PRAIA", RedMuted90s));
             Texture2D texVhs1 = SavePng("Tex_Lombada_VHS_1", BuildVhsSpine("ANIV. MENINAS 94", BlueMuted90s));
-            Texture2D texVhs2 = SavePng("Tex_Lombada_VHS_2", BuildVhsSpine("GRAVACAO TV / 94", InkDark));
+            Texture2D texVhs2 = SavePng("Tex_Lombada_VHS_2", BuildVhsSpine("NAO APAGAR / 94", InkDark));
             Texture2D texBat = SavePng("Tex_Pilha_AA", BuildAABatteryTexture());
             Texture2D texDet = SavePng("Tex_Rotulo_Detergente", BuildCylinderLabel("DETERGENTE", "NEUTRO 500ML", YellowMuted90s, PaperWhiteCrisp, InkBlack));
             Texture2D texBleach = SavePng("Tex_Rotulo_AguaSanitaria", BuildCylinderLabel("AGUA SANITARIA", "CLORO ATIVO 2%", BlueMuted90s, PaperWhiteCrisp, InkBlack));
@@ -574,7 +574,7 @@ namespace Canal420.EditorTools
                 }
             }
 
-            c.DrawCenteredText(256, 728, "ULTIMA FOLHA GUARDADA", 2, InkSoft);
+            c.DrawCenteredText(256, 728, "SANTOS - SP  1994", 2, InkSoft);
             c.ApplyDirtyPaperPatina(seed: 1994, grainAmount: 0.060f, edgeGrime: 0.22f, foldYNorm: 0.50f);
             return c;
         }
@@ -865,7 +865,7 @@ namespace Canal420.EditorTools
                 "- MENINAS NA DONA LUCIA 10H",
                 "- TERNO CINZA LAVANDERIA",
                 "- FARMACIA: XAROPE",
-                "- LIGAR P/ MINHA MAE",
+                "- LIGAR P/ MAE",
                 "",
                 "CONVERSAR COM O CIAN HOJE."
             };
@@ -959,7 +959,7 @@ namespace Canal420.EditorTools
             c.DrawCenteredText(256, 114, "TRAGEDIA NA RUA", 4, inkDeep);
             c.DrawCenteredText(256, 150, "DAS ACACIAS", 4, inkDeep);
             c.FillRect(26, 186, 460, 2, inkMid);
-            c.DrawCenteredText(256, 194, "POLICIA ISOLOU RESIDENCIA NA NOITE DE SABADO (10/09)", 1, redPrint);
+            c.DrawCenteredText(256, 194, "POLICIA ISOLOU CASA NA NOITE DE SABADO (10/09)", 1, redPrint);
             c.FillRect(26, 208, 460, 2, inkMid);
 
             // Halftone low-poly press photograph of the sobrado house behind police tape (upper-left box)
@@ -977,18 +977,18 @@ namespace Canal420.EditorTools
 
             // Lower left column under photo
             c.FillRect(22, 412, 256, 2, inkMuted);
-            c.DrawText(24, 420, "VIZINHOS RELATAM SILENCIO", 1, inkDeep);
+            c.DrawText(24, 420, "PORTA TRANCADA POR FORA", 1, inkDeep);
             DrawNewsColumnLines(c, 24, 436, 250, 7, seed: 9402, inkMid, inkDeep);
 
             // Ambiguous narrative pull-line + dark damp smudge/tear obscuring outcome
             c.FillRect(22, 536, 256, 2, inkDeep);
-            c.DrawText(24, 544, "O MARIDO FOI CONDUZIDO", 1, inkDeep);
-            c.DrawText(24, 558, "NA MADRUGADA PARA...", 1, inkMid);
+            c.DrawText(24, 544, "LEVADO NA MADRUGADA", 1, inkDeep);
+            c.DrawText(24, 558, "PARA...", 1, inkMid);
             DrawNewsColumnLines(c, 24, 574, 230, 3, seed: 9403, inkMuted, inkMid);
 
             // Lower right column
             c.FillRect(294, 426, 196, 2, inkMuted);
-            c.DrawText(294, 434, "INQUERITO EM SEGREDO", 1, inkDeep);
+            c.DrawText(294, 434, "CAUSA NAO INFORMADA", 1, inkDeep);
             DrawNewsColumnLines(c, 294, 450, 196, 11, seed: 9404, inkMid, inkDeep);
 
             // Damp water stain + rubbed smudge over the ambiguous outcome line & torn lower-left edge

@@ -65,9 +65,10 @@ namespace Canal420.EditorTools
             "Greybox_Arquitetura_v42",
             "Greybox_Arquitetura_v43",
             "Greybox_Arquitetura_v44",
-            "Greybox_Arquitetura_v45"
+            "Greybox_Arquitetura_v45",
+            "Greybox_Arquitetura_v46"
         };
-        private const string VersionMarkerName = "Greybox_Arquitetura_v46";
+        private const string VersionMarkerName = "Greybox_Arquitetura_v47";
         private const string MaterialsFolder = "Assets/Materials/Greybox";
 
         private static Material activeBaseboardMaterial;
@@ -1296,8 +1297,8 @@ namespace Canal420.EditorTools
                 targetOpenAngle: 86f,
                 locked: false,
                 allowSafeKey: false,
-                lockedMsg: "Trancada. Passei a chave ontem à noite e não lembro onde deixei.",
-                unlockedMsg: "Cheiro de papel velho...",
+                lockedMsg: "Tá trancada. Eu não lembro de ter passado a chave.",
+                unlockedMsg: "Tá quente aqui dentro.",
                 keyItemId: "chave_escritorio",
                 doorLeafWidth: 0.914f
             );
@@ -1340,7 +1341,7 @@ namespace Canal420.EditorTools
                 targetOpenAngle: 92f,
                 locked: true,
                 allowSafeKey: false,
-                lockedMsg: "Trancada por fora faz tempo. Não tenho nada pra pegar aí dentro.",
+                lockedMsg: "Tá trancada faz tempo. Não tenho nada pra fazer aí dentro.",
                 unlockedMsg: "...",
                 doorLeafWidth: leafW
             );
@@ -1398,8 +1399,8 @@ namespace Canal420.EditorTools
             rackInsideInsp.ConfigureTask(
                 id: "compartimento_rack_opc",
                 prompt: "Olhar dentro do rack",
-                subtitle: "Fitas velhas da família e carnês vencidos no fundo do rack.",
-                repeatSubtitle: "Só poeira e papel velho.",
+                subtitle: "Umas fitas velhas e um monte de conta vencida.",
+                repeatSubtitle: "Só poeira e papel.",
                 linear: false,
                 sound: FoleySoundId.WoodInspect
             );
@@ -1808,8 +1809,8 @@ namespace Canal420.EditorTools
             shelfInsp.ConfigureTask(
                 id: "estante_sala_opc",
                 prompt: "Olhar a estante",
-                subtitle: "Virei esse retrato pra parede faz meses. Nem sei por que ainda não tirei daqui.",
-                repeatSubtitle: "Deixa virado.",
+                subtitle: "Eu virei esse retrato pra parede... nem lembro quando foi.",
+                repeatSubtitle: "Deixa assim.",
                 linear: false,
                 sound: FoleySoundId.WoodInspect
             );
@@ -1830,8 +1831,8 @@ namespace Canal420.EditorTools
             armInsp.ConfigureTask(
                 id: "poltrona_opc",
                 prompt: "Olhar a poltrona",
-                subtitle: "A manta dela continua dobrada no braço. Ninguém senta aqui faz tempo.",
-                repeatSubtitle: "Cheiro de pano guardado.",
+                subtitle: "A manta dela ainda tá dobrada aí. Faz tempo que ninguém senta.",
+                repeatSubtitle: "Cheiro de roupa guardada.",
                 linear: false,
                 sound: FoleySoundId.ClothInspect
             );
@@ -1857,8 +1858,8 @@ namespace Canal420.EditorTools
             fridgeInsp.ConfigureTask(
                 id: "geladeira_bilhetes_opc",
                 prompt: "Ler os papéis na geladeira",
-                subtitle: "Boletos vencidos e a lista dela no ímã: leite, maçã, sabonete infantil. Nunca tirei daí.",
-                repeatSubtitle: "A tinta da caneta já tá desbotada.",
+                subtitle: "Um monte de conta vencida... e a lista de mercado dela no ímã. Nunca tirei.",
+                repeatSubtitle: "A tinta já tá quase apagando.",
                 linear: false,
                 sound: FoleySoundId.PaperRustle
             );
@@ -1949,8 +1950,8 @@ namespace Canal420.EditorTools
             sinkCabinetContents.ConfigureTask(
                 id: "armario_pia_cozinha_opc",
                 prompt: "Olhar embaixo da pia",
-                subtitle: "Resto de detergente e jornal velho cobrindo a madeira úmida.",
-                repeatSubtitle: "Cheiro de madeira molhada.",
+                subtitle: "Só resto de detergente e jornal velho.",
+                repeatSubtitle: "Cheiro de madeira úmida.",
                 linear: false,
                 sound: FoleySoundId.GenericTouch
             );
@@ -2048,7 +2049,7 @@ namespace Canal420.EditorTools
             cutleryInsp.ConfigureTask(
                 id: "gaveta_talheres_opc",
                 prompt: "Olhar os talheres",
-                subtitle: "Só uso o mesmo garfo e a mesma caneca todo dia.",
+                subtitle: "Acabo usando sempre o mesmo garfo e a mesma caneca.",
                 linear: false,
                 sound: FoleySoundId.MetalInspect
             );
@@ -2084,8 +2085,8 @@ namespace Canal420.EditorTools
             stove.ConfigureTask(
                 id: "fogao_opc",
                 prompt: "Olhar o fogão",
-                subtitle: "Faz dias que só uso uma boca pra esquentar água pro café.",
-                repeatSubtitle: "Frio.",
+                subtitle: "Só tenho usado uma boca pra esquentar água do café.",
+                repeatSubtitle: "Tá frio.",
                 linear: false,
                 sound: FoleySoundId.MetalInspect
             );
@@ -2274,8 +2275,8 @@ namespace Canal420.EditorTools
             vanityInside.ConfigureTask(
                 id: "gabinete_banheiro_opc",
                 prompt: "Olhar embaixo da pia",
-                subtitle: "Pano encardido e água sanitária. Faz tempo que não limpo essa casa.",
-                repeatSubtitle: "Nada de útil aqui.",
+                subtitle: "Pano sujo e água sanitária. Faz tempo que não limpo nada aqui.",
+                repeatSubtitle: "Não tem nada que eu precise.",
                 linear: false,
                 sound: FoleySoundId.GenericTouch
             );
@@ -2432,8 +2433,8 @@ namespace Canal420.EditorTools
             medInsp.ConfigureTask(
                 id: "armario_remedios_opc",
                 prompt: "Olhar o armário de remédios",
-                subtitle: "Tomo quase todo dia pra conseguir dormir.",
-                repeatSubtitle: "Metade das caixas já acabou.",
+                subtitle: "Sem esses remédios eu não consigo dormir.",
+                repeatSubtitle: "Quase todas as caixas já acabaram.",
                 linear: false,
                 sound: FoleySoundId.PillBottleRattle
             );
@@ -2491,7 +2492,7 @@ namespace Canal420.EditorTools
             showerInsp.ConfigureTask(
                 id: "chuveiro_opc",
                 prompt: "Olhar o box",
-                subtitle: "Não tomo banho. Sinto que sou observado quando tomo.",
+                subtitle: "Eu evito entrar aí... fico sentindo que tem alguém me olhando.",
                 repeatSubtitle: "O ralo tá seco.",
                 linear: false,
                 sound: FoleySoundId.GenericTouch
@@ -2618,8 +2619,8 @@ namespace Canal420.EditorTools
             bedSide.ConfigureTask(
                 id: "lado_cama_margaret_opc",
                 prompt: "Olhar o outro lado da cama",
-                subtitle: "Mesmo sozinho, eu só durmo na minha ponta.",
-                repeatSubtitle: "Não passo da metade.",
+                subtitle: "Mesmo sozinho, eu só consigo dormir na minha ponta.",
+                repeatSubtitle: "Não passo pro lado de lá.",
                 linear: false,
                 sound: FoleySoundId.ClothInspect
             );
@@ -2654,8 +2655,8 @@ namespace Canal420.EditorTools
             cianDrawerItem.ConfigureTask(
                 id: "gaveta_criado_cian_opc",
                 prompt: "Mexer na gaveta",
-                subtitle: "Cartelas vazias e recibo velho.",
-                repeatSubtitle: "Só lixo de remédio.",
+                subtitle: "Só cartela vazia e recibo velho.",
+                repeatSubtitle: "Cheio de resto de remédio.",
                 linear: false,
                 sound: FoleySoundId.GenericTouch
             );
@@ -2680,7 +2681,7 @@ namespace Canal420.EditorTools
             alarmInsp.ConfigureTask(
                 id: "despertador_quarto_opc",
                 prompt: "Olhar o despertador",
-                subtitle: "Cinco e quarenta. Olho pra esse relógio toda hora esperando dar segunda.",
+                subtitle: "Cinco e quarenta. Já parece tarde da noite.",
                 repeatSubtitle: "Cinco e quarenta.",
                 linear: false,
                 sound: FoleySoundId.MetalInspect
@@ -2729,8 +2730,8 @@ namespace Canal420.EditorTools
             );
             margLockedDrawer.ConfigurePermanentLock(
                 promptWhenLocked: "Tentar abrir a gaveta",
-                firstLockedLine: "Trancada. Nunca tive a chave desse lado.",
-                repeatLockedLine: "Continua trancada.",
+                firstLockedLine: "Tá trancada. Eu nunca tive a chave desse lado.",
+                repeatLockedLine: "Não abre.",
                 sfx: FoleySoundId.DrawerLocked
             );
             EditorUtility.SetDirty(margLockedDrawer);
@@ -2756,7 +2757,7 @@ namespace Canal420.EditorTools
             cianSuitsInsp.ConfigureTask(
                 id: "guarda_roupa_ternos_opc",
                 prompt: "Olhar os ternos",
-                subtitle: "Cheiro de mofo e naftalina. Uso o mesmo terno toda semana.",
+                subtitle: "Cheiro de mofo... acabo usando sempre o mesmo terno.",
                 repeatSubtitle: "Sempre a mesma roupa.",
                 linear: false,
                 sound: FoleySoundId.ClothInspect
@@ -2813,7 +2814,7 @@ namespace Canal420.EditorTools
             wardrobeContainer.ConfigureDay2AjarBehavior(
                 ajarFraction: 0.28f,
                 ajarPrompt: "Fechar a porta do guarda-roupa",
-                closeThought: "Deixei tudo fechado ontem... por que essa porta tá aberta?",
+                closeThought: "Me lembro de ter fechado essa porta ontem.",
                 optionalTaskId: "guarda_roupa_d2_opc"
             );
             EditorUtility.SetDirty(wardrobeContainer);
@@ -2849,8 +2850,8 @@ namespace Canal420.EditorTools
             dresserInsp.ConfigureTask(
                 id: "comoda_quarto_opc",
                 prompt: "Olhar a gaveta da cômoda",
-                subtitle: "Faz meses que só revezo as mesmas três camisas sociais.",
-                repeatSubtitle: "Nada que preste aqui.",
+                subtitle: "Só as mesmas três camisas de sempre.",
+                repeatSubtitle: "Não tem nada aqui.",
                 linear: false,
                 sound: FoleySoundId.ClothInspect
             );
@@ -2881,7 +2882,7 @@ namespace Canal420.EditorTools
                 promptOpen: "Abrir a gaveta do meio da cômoda",
                 promptClose: "Fechar a gaveta do meio",
                 slideSfx: FoleySoundId.DrawerSlide,
-                thoughtOnFirstOpen: "Inchada de umidade. Só cobertor velho guardado aí embaixo."
+                thoughtOnFirstOpen: "Tá difícil de abrir... só tem cobertor velho aqui embaixo."
             );
             EditorUtility.SetDirty(drBottomAnim);
 
@@ -3049,8 +3050,8 @@ namespace Canal420.EditorTools
             frontDoor.ConfigureTask(
                 id: "porta_rua_opc",
                 prompt: "Olhar a porta da rua",
-                subtitle: "Duas voltas na chave e corrente passada. Não abro essa porta pra ninguém.",
-                repeatSubtitle: "Cheia de folheto acumulado por baixo.",
+                subtitle: "Duas voltas na chave e a corrente passada. Não quero abrir pra ninguém.",
+                repeatSubtitle: "Um monte de folheto acumulado por baixo.",
                 linear: false,
                 sound: FoleySoundId.DoorLocked
             );
@@ -3065,7 +3066,7 @@ namespace Canal420.EditorTools
             rackInsp.ConfigureTask(
                 id: "cabideiro_opc",
                 prompt: "Olhar o cabideiro",
-                subtitle: "Esse guarda-chuva vermelho tá aí pendurado desde o ano passado.",
+                subtitle: "Esse guarda-chuva tá aí desde o ano passado.",
                 repeatSubtitle: "Ninguém mexe nisso.",
                 linear: false,
                 sound: FoleySoundId.ClothInspect
@@ -3188,15 +3189,14 @@ namespace Canal420.EditorTools
                 prompt: "Ler o formulário na gaveta",
                 docTitle: "SOLICITAÇÃO DE AFASTAMENTO MÉDICO - DP",
                 docBody:
-                    "COLABORADOR: Cian Nabs | ÁREA: Contabilidade / Auditoria\n" +
+                    "FUNCIONÁRIO: Cian Nabs | SETOR: Contabilidade\n" +
                     "DATA: 14/08/1995\n\n" +
-                    "MOTIVO INFORMADO PELO EMPREGADO:\n" +
-                    "Crises graves de insônia há mais de quatro meses, dores constantes de cabeça,\n" +
-                    "lapsos de memória durante conferências e tremores nas mãos ao fim do expediente.\n\n" +
-                    "ASSINATURA DO EMPREGADO: ___________________________\n" +
-                    "VISTO DA GERÊNCIA:        ___________________________",
-                afterReadThought: "Escrevi isso em agosto e larguei no fundo da gaveta. Se eu entregar pro Tavares, tô na rua.",
-                repeatThought: "Quem pede licença lá dentro perde a mesa.",
+                    "MOTIVO DO PEDIDO:\n" +
+                    "Não tenho conseguido dormir direito há meses. Tenho tido dores de cabeça fortes, esquecimentos durante o trabalho e dificuldade pra lembrar que dia é.\n\n" +
+                    "ASSINATURA DO FUNCIONÁRIO: ___________________________\n" +
+                    "VISTO DA GERÊNCIA: ___________________________",
+                afterReadThought: "Preenchi isso em agosto e larguei aí. Se eu entregar pro Tavares, tô na rua.",
+                repeatThought: "Nunca tive coragem de assinar.",
                 linear: false,
                 hudLabel: "",
                 style: DocumentStyle.CorporateMemo,
@@ -3292,8 +3292,8 @@ namespace Canal420.EditorTools
             shelfInsp.ConfigureTask(
                 id: "estante_escritorio_opc",
                 prompt: "Olhar as pastas na estante",
-                subtitle: "Cinco anos de livro-caixa em ordem. Aqui dentro pelo menos os números fazem sentido.",
-                repeatSubtitle: "Os números batem. O resto não importa.",
+                subtitle: "Cinco anos de arquivo em ordem. Pelo menos os números fazem sentido.",
+                repeatSubtitle: "Aqui dentro as coisas ainda batem.",
                 linear: false,
                 sound: FoleySoundId.WoodInspect
             );
@@ -3704,8 +3704,8 @@ namespace Canal420.EditorTools
             sink.ConfigureTask(
                 id: "lavar_rosto",
                 prompt: "Lavar o rosto",
-                subtitle: "Água gelada. Essa dor atrás do olho não sai por nada.",
-                repeatSubtitle: "Mais água não vai resolver dormir duas horas por noite.",
+                subtitle: "Nem água fria tá tirando essa dor de cabeça.",
+                repeatSubtitle: "Não tá adiantando nada.",
                 linear: true,
                 hudLabel: "Lavar o rosto na pia do banheiro",
                 sound: FoleySoundId.WaterSplash
@@ -3718,8 +3718,8 @@ namespace Canal420.EditorTools
             secInsp.ConfigureTask(
                 id: "checar_secretaria",
                 prompt: "Ouvir a secretária eletrônica",
-                subtitle: "[BIP] \"Cian? Tavares aqui. Liguei no seu ramal e nada... O lote de outubro voltou inteiro errado. Segunda, oito em ponto, resolve isso na minha sala.\" Cortei antes do segundo recado.",
-                repeatSubtitle: "Não vou ficar ouvindo cobrança num domingo à noite.",
+                subtitle: "[BIP] \"Cian, aqui é o Tavares. O lote de outubro voltou errado de novo. Não sei o que tá acontecendo com você, mas segunda às oito eu quero isso resolvido na minha sala.\"",
+                repeatSubtitle: "Hoje é domingo, não vou ficar ouvindo isso.",
                 linear: true,
                 hudLabel: "Ouvir a secretária eletrônica no corredor",
                 sound: FoleySoundId.AnsweringMachinePlay
@@ -3738,7 +3738,7 @@ namespace Canal420.EditorTools
                 id: "pegar_chave_escritorio",
                 itemToGrant: "chave_escritorio",
                 prompt: "Pegar a chave no pratinho",
-                subtitle: "Tá aqui. A da fita azul é do escritório.",
+                subtitle: "Ah, a chave do escritório tava aqui.",
                 meshToHide: keyMesh,
                 sound: FoleySoundId.KeyPickup,
                 linear: false,
@@ -3754,7 +3754,7 @@ namespace Canal420.EditorTools
                 id: "pilhas_controle_task",
                 itemToGrant: "pilhas_controle",
                 prompt: "Pegar as pilhas",
-                subtitle: "Duas pilhas. Serve pro controle.",
+                subtitle: "Acho que essas ainda funcionam.",
                 meshToHide: battVisuals,
                 sound: FoleySoundId.BatterySnap,
                 linear: false,
@@ -3766,8 +3766,8 @@ namespace Canal420.EditorTools
             breakerD1.ConfigureTask(
                 id: "quadro_forca_opc",
                 prompt: "Olhar os disjuntores",
-                subtitle: "Corredor, sala, cozinha...",
-                repeatSubtitle: "Tudo armado.",
+                subtitle: "Tá tudo normal aqui.",
+                repeatSubtitle: "Tudo ligado.",
                 linear: false,
                 sound: FoleySoundId.FuseClackSpark
             );
@@ -3795,15 +3795,14 @@ namespace Canal420.EditorTools
                 prompt: "Ler os papéis na mesa",
                 docTitle: "COMUNICAÇÃO INTERNA Nº 048/95",
                 docBody:
-                    "PARA: Cian Nabs - Analista Contábil Pleno\n" +
-                    "DE: A. Tavares - Gerência Operacional\n\n" +
-                    "Cian, os lotes 03, 07 e 11 da conciliação de outubro voltaram da\n" +
-                    "diretoria com divergência de saldo de novo. Não sei o que está\n" +
-                    "acontecendo com você nas últimas semanas.\n\n" +
-                    "Segunda-feira, às 08h00 em ponto, quero as três pastas refeitas\n" +
-                    "na minha mesa. Outro atraso desses vai pro Departamento Pessoal.",
-                afterReadThought: "Terceira vez que devolvem esse fechamento...",
-                repeatThought: "Os números estão todos embaralhados.",
+                    "PARA: Cian Nabs — Contabilidade\n" +
+                    "DE: A. Tavares — Gerência\n\n" +
+                    "Cian, os lotes 03, 07 e 11 de outubro voltaram da diretoria de novo.\n" +
+                    "Você lançou números repetidos do mês passado e errou as datas.\n\n" +
+                    "Segunda às 8h quero os três refeitos na minha mesa.\n" +
+                    "Se acontecer outra vez, vou passar isso pro DP.",
+                afterReadThought: "De novo isso... eu tenho certeza que já tinha conferido.",
+                repeatThought: "Não tô conseguindo acompanhar esses números.",
                 linear: true,
                 hudLabel: "Conferir os papéis na mesa",
                 style: DocumentStyle.CorporateMemo
@@ -3813,8 +3812,8 @@ namespace Canal420.EditorTools
             calTask.ConfigureTask(
                 id: "checar_calendario",
                 prompt: "Olhar o calendário",
-                subtitle: "Domingo, 29 de outubro de 1995. Mais uma semana inteira riscada.",
-                repeatSubtitle: "29 de outubro. Amanhã cedo começa tudo de novo.",
+                subtitle: "Dia vinte e nove... passou outra semana e eu nem vi.",
+                repeatSubtitle: "Amanhã já é segunda de novo.",
                 linear: true,
                 hudLabel: "Confirmar a data no calendário",
                 sound: FoleySoundId.PaperRustle
@@ -3824,8 +3823,8 @@ namespace Canal420.EditorTools
             mirror.ConfigureTask(
                 id: "espelho_dia1_opc",
                 prompt: "Olhar no espelho",
-                subtitle: "Olheira funda, barba por fazer. Pareço mais velho do que sou.",
-                repeatSubtitle: "Melhor sair da frente do vidro.",
+                subtitle: "Olha a minha cara... preciso dormir.",
+                repeatSubtitle: "Melhor não ficar olhando.",
                 linear: false,
                 sound: FoleySoundId.GlassInspect
             );
@@ -3838,8 +3837,8 @@ namespace Canal420.EditorTools
             framesInsp.ConfigureTask(
                 id: "quadros_familia_d1_opc",
                 prompt: "Olhar as fotografias do corredor",
-                subtitle: "Eu bati essa foto num domingo qualquer no quintal. Nunca paro aqui pra olhar.",
-                repeatSubtitle: "Passo reto por esse corredor todo dia.",
+                subtitle: "Faz tempo que eu passo aqui e nem olho pra isso.",
+                repeatSubtitle: "Não quero ficar parado olhando.",
                 linear: false,
                 sound: FoleySoundId.WoodInspect
             );
@@ -3850,8 +3849,8 @@ namespace Canal420.EditorTools
             margaretPortrait.ConfigureTask(
                 id: "retrato_margaret_d1_opc",
                 prompt: "Olhar o retrato de Margaret",
-                subtitle: "A parede em volta encardiu toda, menos atrás da moldura. Faz tempo que ninguém tira isso pra limpar.",
-                repeatSubtitle: "O vidro tá opaco de poeira.",
+                subtitle: "Tá cheio de poeira... faz tempo que ninguém limpa.",
+                repeatSubtitle: "Precisa limpar esse vidro.",
                 linear: false,
                 sound: FoleySoundId.WoodInspect
             );
@@ -3860,8 +3859,8 @@ namespace Canal420.EditorTools
             coatD1.ConfigureTask(
                 id: "guarda_roupa_d1_opc",
                 prompt: "Olhar o casaco cinza",
-                subtitle: "As roupas dela continuam penduradas no mesmo canto. Não mexo aí.",
-                repeatSubtitle: "Cheiro forte.",
+                subtitle: "As roupas dela ainda tão aqui... eu não mexo nesse lado.",
+                repeatSubtitle: "Que cheiro forte...",
                 linear: false,
                 sound: FoleySoundId.ClothInspect
             );
@@ -3889,14 +3888,14 @@ namespace Canal420.EditorTools
             bottlesTask.ConfigureDocument(
                 id: "frascos_calmantes_dia2",
                 prompt: "Olhar os frascos e a receita",
-                docTitle: "NOTIFICAÇÃO DE RECEITA B1 - CONTROLE ESPECIAL",
+                docTitle: "NOTIFICAÇÃO DE RECEITA B1 — CONTROLE ESPECIAL",
                 docBody:
                     "PACIENTE: Cian Nabs\n" +
                     "MEDICAMENTO: Clonazepam 2 mg - 02 caixas (60 comprimidos)\n\n" +
-                    "POSOLOGIA: Tomar 01 comprimido antes de deitar.\n" +
-                    "NÃO REPETIR SEM NOVA AVALIAÇÃO MÉDICA.\n\n" +
-                    "DISPENSADO EM: 24/10/1994  |  FARMÁCIA CENTRAL - SANTOS/SP",
-                afterReadThought: "A receita venceu faz quase um ano.",
+                    "POSOLOGIA: 01 comprimido à noite, antes de dormir.\n" +
+                    "Não repetir sem nova consulta.\n\n" +
+                    "DATA: 24/10/1994  |  FARMÁCIA CENTRAL — SANTOS/SP",
+                afterReadThought: "Essa receita é do ano passado.",
                 repeatThought: "Os dois frascos tão vazios.",
                 linear: true,
                 hudLabel: "Ver os frascos na mesa da sala",
@@ -3915,7 +3914,7 @@ namespace Canal420.EditorTools
                 id: "pegar_fita_banheiro_dia2",
                 itemToGrant: "fita_secretaria",
                 prompt: "Pegar a fita na borda da pia",
-                subtitle: "Tava jogada aqui na pia molhada. Devo ter arrancado da secretária ontem de noite sem perceber.",
+                subtitle: "Tá toda molhada.",
                 meshToHide: tapeMesh,
                 sound: FoleySoundId.KeyPickup,
                 linear: false,
@@ -3946,9 +3945,9 @@ namespace Canal420.EditorTools
                 neededItem: "fita_secretaria",
                 lockedPromptText: "Olhar a secretária apitando",
                 unlockedPromptText: "Colocar a fita e ouvir a gravação",
-                missingThought: "Tá sem fita, só apitando. Devo ter deixado em algum canto ontem à noite.",
-                completedThought: "[BIP] Sexta-feira, 23h58. Só chiado e alguém respirando perto do bocal... Tem um choro abafado de criança lá no fundo antes da linha cair.",
-                repeatThought: "Aquele choro baixo no fundo da gravação... não era recado de trabalho.",
+                missingThought: "Tá sem a fita, só nesse apito... onde é que eu deixei isso?",
+                completedThought: "[BIP] Sábado, 22h47. ... Tem alguém respirando na gravação.",
+                repeatThought: "Quem deixou isso gravado?",
                 lockedSfx: FoleySoundId.AnsweringMachineEmpty,
                 successSfx: FoleySoundId.CassetteTapeHauntD2,
                 revealObj: tapeInsertD2,
@@ -3967,8 +3966,8 @@ namespace Canal420.EditorTools
             mirror.ConfigureTask(
                 id: "espelho_dia2_opc",
                 prompt: "Olhar no espelho",
-                subtitle: "Pálpebra caída, boca pastosa de remédio. O reflexo demorou meio segundo pra acompanhar.",
-                repeatSubtitle: "Não quero ficar olhando pra isso.",
+                subtitle: "Tô com a vista pesada... parece que nem acordei direito.",
+                repeatSubtitle: "Não quero ficar me olhando.",
                 linear: false,
                 sound: FoleySoundId.GlassInspect
             );
@@ -3978,8 +3977,8 @@ namespace Canal420.EditorTools
             cal.ConfigureTask(
                 id: "calendario_d2_opc",
                 prompt: "Olhar o calendário",
-                subtitle: "Outubro de 1995. Como já é segunda se eu não saí do sofá?",
-                repeatSubtitle: "Outubro de 1995.",
+                subtitle: "Hoje é segunda, nem liguei para avisar.",
+                repeatSubtitle: "Aviso depois.",
                 linear: false,
                 sound: FoleySoundId.PaperRustle
             );
@@ -3988,8 +3987,8 @@ namespace Canal420.EditorTools
             emptyFlashD2.ConfigureTask(
                 id: "lanterna_vazia_d2_opc",
                 prompt: "Olhar a lanterna",
-                subtitle: "Sem pilha nenhuma. Tirei ontem de noite.",
-                repeatSubtitle: "Vazia.",
+                subtitle: "Tá sem pilha, eu tirei ontem.",
+                repeatSubtitle: "Continua sem pilha.",
                 linear: false,
                 sound: FoleySoundId.MetalInspect
             );
@@ -3999,8 +3998,8 @@ namespace Canal420.EditorTools
             breakerD2.ConfigureTask(
                 id: "quadro_forca_d2_opc",
                 prompt: "Olhar os disjuntores",
-                subtitle: "Tem um chiado elétrico dentro dessa caixa.",
-                repeatSubtitle: "Melhor não mexer nisso agora.",
+                subtitle: "Tá fazendo um barulho estranho aqui dentro.",
+                repeatSubtitle: "Melhor não mexer nisso.",
                 linear: false,
                 sound: FoleySoundId.FuseClackSpark
             );
@@ -4010,8 +4009,8 @@ namespace Canal420.EditorTools
             coatD2.ConfigureTask(
                 id: "casaco_margaret_d2_opc",
                 prompt: "Olhar o casaco cinza",
-                subtitle: "A manga do casaco encostou no meu braço...",
-                repeatSubtitle: "Deixa a porta fechada.",
+                subtitle: "A manga encostou no meu braço... tá gelada.",
+                repeatSubtitle: "Deixa fechado.",
                 linear: false,
                 sound: FoleySoundId.ClothInspect
             );
@@ -4037,7 +4036,7 @@ namespace Canal420.EditorTools
             HallucinationTrigger ht1 = GetOrAdd<HallucinationTrigger>(trig1);
             ht1.ConfigureShadowPass(
                 id: "vulto_corredor",
-                subtitle: "Passou alguém dobrando pro fundo do corredor... Não. Deve ser o efeito do remédio na vista.",
+                subtitle: "Ei, tem alguém aí?... Não, não tem ninguém. É esse remédio.",
                 shadow: shadowFigure,
                 startPt: shStart,
                 endPt: shEnd,
@@ -4064,7 +4063,7 @@ namespace Canal420.EditorTools
             HallucinationTrigger ht2 = GetOrAdd<HallucinationTrigger>(trig2);
             ht2.ConfigureSwapObjects(
                 id: "quadros_familia_alterados",
-                subtitle: "Os quadros racharam...",
+                subtitle: "Que barulho foi esse?... Os quadros quebraram.",
                 normals: new[] { normal1, normal2 },
                 altereds: new[] { altered1, altered2 },
                 armedByDefault: false,
@@ -4124,7 +4123,7 @@ namespace Canal420.EditorTools
                 id: "pegar_lanterna_dia3",
                 itemToGrant: "lanterna_dia3",
                 prompt: "Pegar a lanterna",
-                subtitle: "Jurava que eu tinha tirado as pilhas dessa lanterna... Pelo menos tá acendendo.",
+                subtitle: "Espera... eu tinha tirado as pilhas dessa lanterna. Como é que ela tá acendendo?",
                 meshToHide: null,
                 sound: FoleySoundId.FlashlightClick,
                 linear: true,
@@ -4148,16 +4147,14 @@ namespace Canal420.EditorTools
                 prompt: "Olhar o frasco manipulado",
                 docTitle: "FÓRMULA MANIPULADA — REGISTRO / FARMÁCIA CENTRAL",
                 docBody:
-                    "PACIENTE: Cian Nabs  |  PRONTUÁRIO / PEDIDO Nº 4182\n" +
-                    "COMPOSIÇÃO POR CÁPSULA:\n" +
-                    "Fenproporex 25 mg + Cafeína Anidra 200 mg (30 cáps.)\n\n" +
-                    "INDICAÇÃO: 01 cápsula pela manhã.\n" +
-                    "ADVERTÊNCIA: Não associar a outros estimulantes.\n" +
-                    "Risco de taquicardia, tremor, agitação psicomotora,\n" +
-                    "insônia severa e confusão sensorial.\n\n" +
-                    "[O frasco está derrubado sobre a mesa, com o rótulo borrado de suor e a data ilegível.]",
-                afterReadThought: "Fenproporex com cafeína. A data tá raspada... parece etiqueta de farmácia ou de clínica. Preciso engolir uma cápsula antes de apagar de novo.",
-                repeatThought: "Fenproporex com cafeína. O corpo corre, mas a cabeça não desliga.",
+                    "PACIENTE: Cian Nabs | PEDIDO Nº 4182\n" +
+                    "FÓRMULA: Fenproporex 25 mg + Cafeína 200 mg (30 cápsulas)\n\n" +
+                    "MODO DE USAR: 01 cápsula pela manhã.\n" +
+                    "ATENÇÃO: Não tomar com outros remédios ou café.\n" +
+                    "Pode causar falta de ar, tremor, insônia e confusão.\n\n" +
+                    "DATA: --/--/--",
+                afterReadThought: "A data tá raspada... nem lembro de ter comprado isso. Preciso tomar uma logo.",
+                repeatThought: "Fenproporex com cafeína.",
                 linear: false,
                 hudLabel: "",
                 style: DocumentStyle.MedicalPrescription,
@@ -4182,10 +4179,10 @@ namespace Canal420.EditorTools
                 stepVisuals: new[] { looseCap1, looseCap2 },
                 useSubtitles: new[]
                 {
-                    "Desceu rasgando sem água... O coração disparou e a vista firmou. Agora consigo checar o quadro de força.",
-                    "A última cápsula. A boca tá seca feito poeira e o peito vai rebentar."
+                    "Que gosto horrível... pelo menos a tontura passou.",
+                    "Essa era a última."
                 },
-                cooldownSubtitle: "O coração já tá disparado demais. Espera baixar antes de engolir outra.",
+                cooldownSubtitle: "Meu coração já tá disparado, melhor esperar um pouco.",
                 sound: FoleySoundId.DryPillSwallow
             );
             EditorUtility.SetDirty(stimCapsUse);
@@ -4194,12 +4191,12 @@ namespace Canal420.EditorTools
             mirrorD3.ConfigureTask(
                 id: "espelho_dia3_opc",
                 prompt: "Olhar no espelho",
-                subtitle: "Pupila aberta demais na penumbra. A veia do pescoço bate no mesmo compasso da lâmpada... Parece outra pessoa encarando de volta.",
-                repeatSubtitle: "O vidro escuro devolve mais sombra do que rosto.",
+                subtitle: "Olha o tamanho da minha pupila... tem alguma coisa errada comigo.",
+                repeatSubtitle: "Tá escuro demais pra ver direito.",
                 linear: false,
                 sound: FoleySoundId.GlassInspect
             );
-            mirrorD3.SetDissociationTruthFlash("NÃO SOU EU");
+            mirrorD3.SetDissociationTruthFlash("VOCÊ OUVIU");
 
             // Quadros tortos na parede Oeste do braço Norte do corredor L (X = +1.04f, voltados +X)
             CreateDetailCylinder(d3Root.transform, "Prego_Parede_Familia_1_D3", new Vector3(1.048f, 1.882f, 2.80f), new Vector3(0.010f, 0.012f, 0.010f), pal.metalDark, new Vector3(0f, 0f, 90f));
@@ -4245,7 +4242,7 @@ namespace Canal420.EditorTools
                 id: "pegar_fusivel_dia3",
                 itemToGrant: "fusivel_reserva",
                 prompt: "Pegar o fusível",
-                subtitle: "Achei um fusível no fundo da caixa.",
+                subtitle: "Tem um aqui no fundo. Ainda tá inteiro.",
                 meshToHide: fuseMesh,
                 sound: FoleySoundId.KeyPickup,
                 linear: false,
@@ -4299,8 +4296,8 @@ namespace Canal420.EditorTools
                 neededItem: "fusivel_reserva",
                 lockedPromptText: "Olhar o fusível queimado",
                 unlockedPromptText: "Trocar o fusível queimado",
-                missingThought: "O cartucho torrou na chave do corredor. Tem que ter reserva na caixa de ferramentas.",
-                completedThought: "Estalou. A luz do corredor voltou.",
+                missingThought: "O fusível do corredor queimou. Acho que tem outro na caixa de ferramentas.",
+                completedThought: "Voltou... mas só acendeu o corredor.",
                 repeatThought: "Já tá ligado.",
                 lockedSfx: FoleySoundId.DrawerLocked,
                 successSfx: FoleySoundId.FuseClackSpark,
@@ -4316,7 +4313,7 @@ namespace Canal420.EditorTools
                 id: "chave_arquivo_pessoal_dia3",
                 itemToGrant: "chave_arquivo_pessoal",
                 prompt: "Vasculhar o bolso do casaco",
-                subtitle: "Uma chavinha escondida no fundo do bolso dela. É da gaveta alta do meu arquivo no escritório.",
+                subtitle: "Tem uma chave aqui no bolso dela... parece a da gaveta do meu arquivo.",
                 meshToHide: null,
                 sound: FoleySoundId.KeyPickup,
                 linear: false,
@@ -4338,19 +4335,19 @@ namespace Canal420.EditorTools
                 prompt: "Ler a folha rasgada na cabeceira",
                 docTitle: "AGENDA PESSOAL",
                 docBody:
-                    "SÁBADO - 10 DE SETEMBRO\n\n" +
+                    "SÁBADO — 10 DE SETEMBRO\n\n" +
                     "- Deixar as meninas na Dona Lúcia às 10h\n" +
-                    "- Buscar o terno cinza do Cian na lavanderia até meio-dia\n" +
-                    "- Farmácia: xarope infantil e termômetro\n" +
+                    "- Pegar o terno cinza do Cian na lavanderia antes do meio-dia\n" +
+                    "- Passar na farmácia (xarope e termômetro)\n" +
                     "- Ligar pra minha mãe à tarde\n\n" +
-                    "Conversar com o Cian hoje de noite.",
+                    "Preciso conversar com o Cian hoje à noite.",
                 afterReadThought: "Ela escreveu isso no sábado de manhã...",
-                repeatThought: "Ela só queria conversar comigo naquela noite.",
+                repeatThought: "Ela só queria conversar.",
                 linear: false,
                 hudLabel: "",
                 style: DocumentStyle.HandwrittenNote
             );
-            plannerDoc.SetDissociationTruthFlash("10 DE SETEMBRO - EU TRANQUEI");
+            plannerDoc.SetDissociationTruthFlash("10/09 — NÃO ABRE");
 
             // Bilhete dobrado no mata-borrão da escrivaninha do escritório (Y = 0.783f)
             GameObject letter = CreateContainer(d3Root.transform, "Bilhete_Margaret_Dia3");
@@ -4368,15 +4365,13 @@ namespace Canal420.EditorTools
                 docTitle: "BILHETE DE MARGARET",
                 docBody:
                     "Cian,\n\n" +
-                    "Deixei o seu prato tampado no forno desligado, é só esquentar.\n" +
-                    "Fiquei te esperando até onze e meia, mas as meninas não\n" +
-                    "aguentaram ficar acordadas.\n\n" +
-                    "Quando você terminar aí, encosta a porta do corredor\n" +
-                    "devagar. Amanhã cedo a gente conversa direito, sem grito na\n" +
-                    "frente delas.\n\n" +
+                    "Deixei seu prato tampado no forno, é só esquentar.\n" +
+                    "Esperei até onze e meia, mas as meninas já estavam caindo de sono.\n\n" +
+                    "Quando você terminar aí, fecha a porta devagar pra não acordar elas.\n" +
+                    "Amanhã a gente conversa direito, sem gritar na frente das meninas.\n\n" +
                     "Margaret",
-                afterReadThought: "Tava dobrado debaixo das pastas desde aquela sexta... Nem li o que ela pediu.",
-                repeatThought: "Ela deixou o jantar no forno e foi deitar com as meninas.",
+                afterReadThought: "Tava aqui debaixo das pastas esse tempo todo... eu nem cheguei a ler.",
+                repeatThought: "Eu deixei aqui sem abrir.",
                 linear: false,
                 hudLabel: "",
                 style: DocumentStyle.HandwrittenNote
@@ -4386,8 +4381,8 @@ namespace Canal420.EditorTools
             cal.ConfigureTask(
                 id: "calendario_d3_opc",
                 prompt: "Olhar o calendário",
-                subtitle: "Um mês inteiro riscado em cima do outro... Eu só troquei a folha pra fingir que o ano continuou.",
-                repeatSubtitle: "Outubro por cima de setembro.",
+                subtitle: "Um monte de dia riscado... eu já nem sei mais em que mês eu tô.",
+                repeatSubtitle: "Outubro em cima de setembro.",
                 linear: false,
                 sound: FoleySoundId.PaperRustle
             );
@@ -4410,8 +4405,8 @@ namespace Canal420.EditorTools
                     "DOM 11\n" +
                     "SEG 12\n" +
                     "TER 13",
-                afterReadThought: "Folha de setembro do ano passado embaixo do bloco novo... Risquei tudo até sexta-feira dia nove, e parei.",
-                repeatThought: "O último risco quase furou o papel no dia nove.",
+                afterReadThought: "A folha de setembro do ano passado ainda tava aqui embaixo... nem lembrava disso.",
+                repeatThought: "Não tem nada marcado depois do dia nove.",
                 linear: false,
                 hudLabel: "",
                 style: DocumentStyle.HandwrittenNote
@@ -4422,8 +4417,8 @@ namespace Canal420.EditorTools
             secInsp.ConfigureTask(
                 id: "secretaria_d3_opc",
                 prompt: "Olhar a secretária",
-                subtitle: "Arranquei da tomada. Não aguentava mais esse apito.",
-                repeatSubtitle: "Fora da tomada.",
+                subtitle: "Eu puxei da tomada porque não aguentava mais esse apito.",
+                repeatSubtitle: "Tá fora da tomada.",
                 linear: false,
                 sound: FoleySoundId.MetalInspect
             );

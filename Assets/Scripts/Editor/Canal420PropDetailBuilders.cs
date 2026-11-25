@@ -5464,8 +5464,8 @@ namespace Canal420.EditorTools
             midDrawerInsp.ConfigureTask(
                 id: "arquivo_gaveta_media_opc",
                 prompt: "Folhear as pastas",
-                subtitle: "Declarações de 92 e 93. Coisa antiga do escritório, tudo em ordem.",
-                repeatSubtitle: "Só arquivo antigo.",
+                subtitle: "Papéis de 92 e 93. Tá tudo em ordem aqui.",
+                repeatSubtitle: "Só faltam as coisas de 94.",
                 linear: false,
                 sound: FoleySoundId.PaperRustle
             );
@@ -5514,21 +5514,21 @@ namespace Canal420.EditorTools
             cabinetDoc.ConfigureDocument(
                 id: "arquivo_metalico_opc",
                 prompt: "Ler o recorte de jornal guardado",
-                docTitle: "JORNAL DA BAIXADA - Domingo, 11 de setembro de 1994",
+                docTitle: "JORNAL DA BAIXADA — Domingo, 11 de setembro de 1994",
                 docBody:
                     "MÃE E DUAS FILHAS SÃO ENCONTRADAS MORTAS NA RUA DAS ACÁCIAS\n\n" +
-                    "A Polícia Civil investiga a morte de M. N., de 32 anos, e de suas\n" +
-                    "duas filhas, de 6 e 8 anos, encontradas ontem à noite (10) dentro de\n" +
-                    "um sobrado no fim da Rua das Acácias.\n\n" +
-                    "Segundo o boletim de ocorrência, vizinhos ouviram gritos por volta das\n" +
-                    "22h30 e chamaram a PM. Ao arrombarem o quarto dos fundos, trancado pelo\n" +
-                    "lado de fora, os policiais já encontraram as três sem vida.\n\n" +
-                    "O marido, contador de 34 anos, permanecia em silêncio na sala quando a\n" +
-                    "viatura chegou. O IML recolheu os corpos na madrugada e o suspeito foi\n" +
-                    "encaminhado sob custódia para avaliação...\n\n" +
-                    "[A borda inferior do recorte está rasgada e borrada de umidade.]",
-                afterReadThought: "Conduzido sob custódia... A parte de baixo tá rasgada. Eu fui solto? Tô numa clínica? Ou nunca saí dessa sala naquela noite?",
-                repeatThought: "O pedaço onde dizia o que aconteceu comigo foi arrancado.",
+                    "A Polícia Civil investiga a morte de M. N., de 32 anos, e das duas\n" +
+                    "filhas, de 6 e 8 anos, na noite de sábado (10), em uma casa no fim\n" +
+                    "da Rua das Acácias.\n\n" +
+                    "Vizinhos chamaram a PM por volta das 22h30 depois de ouvirem gritos\n" +
+                    "e barulho vindo de dentro. Quando os policiais arrombaram a porta do\n" +
+                    "quarto dos fundos, que estava trancada por fora, as três já estavam\n" +
+                    "mortas. A polícia ainda não informou a causa.\n\n" +
+                    "O marido, contador de 34 anos, estava sentado na sala com a TV alta.\n" +
+                    "Ele foi levado na madrugada para...\n\n" +
+                    "//////////////////////////////",
+                afterReadThought: "O final foi arrancado.",
+                repeatThought: "...",
                 linear: false,
                 hudLabel: "",
                 style: DocumentStyle.NewspaperClipping,
@@ -5548,8 +5548,8 @@ namespace Canal420.EditorTools
                 neededKeyId: "chave_arquivo_pessoal",
                 promptWhenLocked: "Tentar abrir a gaveta alta do arquivo",
                 promptWhenHasKey: "Destrancar e abrir a gaveta alta",
-                lockedLine: "Não abre. A fechadura tá toda riscada, parece que tentei forçar com alguma coisa.",
-                unlockedLine: "A chavinha do bolso dela serviu certinho."
+                lockedLine: "Não abre. A fechadura tá toda riscada.",
+                unlockedLine: "A chave do bolso dela serviu."
             );
             topDrawerAnim.RegisterInteriorObject(cabinetDoc);
             EditorUtility.SetDirty(topDrawerAnim);

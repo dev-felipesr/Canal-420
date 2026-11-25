@@ -19,7 +19,7 @@ namespace Canal420.Puzzles
         [Header("Textos Narrativos")]
         [SerializeField] private string interactionPrompt = "Ajeitar o retrato";
         [TextArea(2, 4)]
-        [SerializeField] private string fallSubtitle = "O arame arrebentou... Não queria me lembrar desse cofre.";
+        [SerializeField] private string fallSubtitle = "O arame soltou. Eu não queria me lembrar desse cofre.";
         [SerializeField] private float subtitleDuration = 5.8f;
 
         [Header("Animação de Queda")]

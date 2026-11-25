@@ -83,7 +83,7 @@ namespace Canal420.Interaction
         private bool isShowingSubtitle = false;
         private Coroutine dissociationSubtitleCoroutine;
         private static readonly Color DefaultSubtitleColor = new Color(0.95f, 0.95f, 0.94f, 1f);
-        private static readonly Color DissociationTruthColor = new Color(0.88f, 0.88f, 0.87f, 1f);
+        private static readonly Color DissociationTruthColor = new Color(0.94f, 0.80f, 0.78f, 1f);
 
         private GameObject documentPanelObj;
         private CanvasGroup documentCanvasGroup;
@@ -667,10 +667,10 @@ namespace Canal420.Interaction
                 dissociationSubtitleCoroutine = null;
             }
 
-            ApplySubtitleImmediateOrTyped(message, duration, instantFull: false, DefaultSubtitleColor);
+            ApplySubtitleImmediateOrTyped(message, duration, instantFull: false, DefaultSubtitleColor, FontStyle.Normal);
         }
 
-        public void ShowDissociationGlitchSubtitle(string suppressedTruth, string denialLine, float duration = 5.6f, float truthFlashDuration = 0.19f, bool playAudioBurst = true)
+        public void ShowDissociationGlitchSubtitle(string suppressedTruth, string denialLine, float duration = 5.6f, float truthFlashDuration = 0.48f, bool playAudioBurst = true)
         {
             if (subtitleText == null)
                 return;
@@ -696,7 +696,13 @@ namespace Canal420.Interaction
                 yield return null;
             }
 
-            ApplySubtitleImmediateOrTyped(suppressedTruth.Trim().ToUpperInvariant(), 1.0f, instantFull: true, DissociationTruthColor);
+            // Guarantee at least one clean frame after modal dismissal before displaying the flash so it is never eaten by a transition hitch.
+            if (ObjectiveHUD.WasModalClosedRecently(1))
+            {
+                yield return null;
+            }
+
+            ApplySubtitleImmediateOrTyped(suppressedTruth.Trim().ToUpperInvariant(), 1.2f, instantFull: true, DissociationTruthColor, FontStyle.Bold);
 
             if (playAudioBurst && Canal420AudioManager.Instance != null)
             {
@@ -704,25 +710,27 @@ namespace Canal420.Interaction
             }
             if (SanityEffects.Instance != null)
             {
-                SanityEffects.Instance.TriggerHallucinationSpike(0.42f, 0.22f, allowSubliminalFlash: false);
+                SanityEffects.Instance.TriggerHallucinationSpike(0.42f, 0.28f, allowSubliminalFlash: false);
             }
 
-            float waitTarget = Mathf.Clamp(truthFlashDuration, 0.12f, 0.30f);
+            float waitTarget = Mathf.Clamp(truthFlashDuration, 0.30f, 0.72f);
             float elapsed = 0f;
-            while (elapsed < waitTarget)
+            int visibleFrames = 0;
+            while (elapsed < waitTarget || visibleFrames < 8)
             {
                 if (!IsSubtitleSuppressedByModal())
                 {
-                    elapsed += Time.deltaTime;
+                    elapsed += Mathf.Min(Time.deltaTime, 0.05f);
+                    visibleFrames++;
                 }
                 yield return null;
             }
 
             dissociationSubtitleCoroutine = null;
-            ApplySubtitleImmediateOrTyped(denialLine, duration, instantFull: false, DefaultSubtitleColor);
+            ApplySubtitleImmediateOrTyped(denialLine, duration, instantFull: false, DefaultSubtitleColor, FontStyle.Normal);
         }
 
-        private void ApplySubtitleImmediateOrTyped(string message, float duration, bool instantFull, Color textColor)
+        private void ApplySubtitleImmediateOrTyped(string message, float duration, bool instantFull, Color textColor, FontStyle fontStyle = FontStyle.Normal)
         {
             if (string.IsNullOrWhiteSpace(message) || subtitleText == null)
                 return;
@@ -731,6 +739,7 @@ namespace Canal420.Interaction
             currentSubtitleVoice = InferVoiceFromText(fullSubtitleMessage);
             postRevealHoldTimer = Mathf.Max(3.4f, duration * 0.72f);
             subtitleText.color = textColor;
+            subtitleText.fontStyle = fontStyle;
             subtitleText.enabled = true;
             isShowingSubtitle = true;
 
@@ -923,11 +932,14 @@ namespace Canal420.Interaction
                     subtitleCanvasGroup.alpha = 0f;
                 }
             }
-            else if (postRevealHoldTimer > 0f)
+            else if (postRevealHoldTimer > 0f || dissociationSubtitleCoroutine != null)
             {
                 subtitleCurrentAlpha = Mathf.MoveTowards(subtitleCurrentAlpha, 1f, Time.deltaTime * 6.5f);
                 subtitleCanvasGroup.alpha = subtitleCurrentAlpha;
-                postRevealHoldTimer -= Time.deltaTime;
+                if (dissociationSubtitleCoroutine == null)
+                {
+                    postRevealHoldTimer -= Time.deltaTime;
+                }
             }
             else
             {

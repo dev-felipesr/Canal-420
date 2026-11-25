@@ -269,7 +269,7 @@ namespace Canal420.Interaction
                     if (InteractionSystem.Instance != null)
                     {
                         InteractionSystem.Instance.ShowSubtitle(
-                            "O vidro ainda tá morno. Não lembro a que horas desliguei isso.",
+                            "Ainda tá quente... eu não lembro quando desliguei.",
                             5.6f
                         );
                     }
@@ -288,7 +288,7 @@ namespace Canal420.Interaction
                     if (InteractionSystem.Instance != null)
                     {
                         InteractionSystem.Instance.ShowSubtitle(
-                            "Sem luz na sala, mas o tubo ainda dá uns estalos por dentro.",
+                            "Não tem luz na casa, mas o vidro ainda tá estalando.",
                             5.4f
                         );
                     }
@@ -384,7 +384,7 @@ namespace Canal420.Interaction
             {
                 InteractionSystem.Instance.ClearOverridePrompt();
                 InteractionSystem.Instance.ShowSubtitle(
-                    "[CANAL 04]: \"...o enxugamento no setor administrativo já fechou mais de quatro mil vagas de escritório só neste semestre no estado...\"",
+                    "[CANAL 04]: \"...só neste semestre já foram fechadas mais de quatro mil vagas em escritórios no estado...\"",
                     6.6f
                 );
             }
@@ -407,7 +407,7 @@ namespace Canal420.Interaction
                 if (InteractionSystem.Instance != null)
                 {
                     InteractionSystem.Instance.ShowSubtitle(
-                        "[CANAL 09]: \"...frente fria estacionada na serra mantém neblina fechada na Baixada até quarta-feira...\" A antena tá puxando dois canais juntos.",
+                        "[CANAL 09]: \"...a neblina deve continuar fechada na Baixada até quarta-feira, com baixa visibilidade na serra...\"",
                         6.0f
                     );
                 }
@@ -420,7 +420,7 @@ namespace Canal420.Interaction
                 if (InteractionSystem.Instance != null)
                 {
                     InteractionSystem.Instance.ShowSubtitle(
-                        "[CANAL 17]: \"...café passado em quatro minutos, direto na jarra térmica! Ligue 0800...\" Nem de madrugada param de tentar vender coisa.",
+                        "[CANAL 17]: \"...café pronto em quatro minutos! Ligue agora, 0800...\"",
                         6.2f
                     );
                 }
@@ -444,7 +444,7 @@ namespace Canal420.Interaction
                 {
                     pendingDay1PromptText = "[E] Mudar de canal";
                     InteractionSystem.Instance.ShowSubtitle(
-                        "Nunca entrou sinal nessa faixa. Essas cores estão dando um sono estranho.",
+                        "Que canal é esse?... Esse barulho tá me dando tontura.",
                         6.8f
                     );
                 }
@@ -462,7 +462,7 @@ namespace Canal420.Interaction
                 {
                     pendingDay1PromptText = "[E] Desligar a TV";
                     InteractionSystem.Instance.ShowSubtitle(
-                        "Não mudou. A imagem tá derretendo... parece um corredor lá dentro.",
+                        "Não tá mudando...",
                         6.5f
                     );
                 }
@@ -484,7 +484,7 @@ namespace Canal420.Interaction
             {
                 InteractionSystem.Instance.ClearOverridePrompt();
                 InteractionSystem.Instance.ShowSubtitle(
-                    "Apertei pra desligar e não vai. Meu braço tá pesado... não tô conseguindo levantar.",
+                    "Não desliga... não tô conseguindo levantar o braço.",
                     6.8f
                 );
             }
@@ -566,8 +566,8 @@ namespace Canal420.Interaction
 
                 InteractionSystem.Instance.ShowSubtitle(
                     alreadyInLivingRoom
-                        ? "A televisão ligou sozinha..."
-                        : "Tem alguém na sala? A televisão ligou sozinha.",
+                        ? "Ligou sozinha?"
+                        : "Tem alguém na sala?",
                     5.8f
                 );
             }
@@ -603,7 +603,7 @@ namespace Canal420.Interaction
             if (InteractionSystem.Instance != null)
             {
                 InteractionSystem.Instance.ShowSubtitle(
-                    "[PLANTÃO]: \"...a Polícia Civil isolou agora à noite uma casa no fim da Rua das Acácias, após vizinhos ligarem pro 190 ouvindo gritos e pancadas...\"",
+                    "[PLANTÃO]: \"...a Polícia Civil isolou agora à noite uma casa no fim da Rua das Acácias, depois que vizinhos ligaram pro 190 ouvindo gritos lá dentro...\"",
                     6.8f
                 );
             }
@@ -613,7 +613,7 @@ namespace Canal420.Interaction
             if (InteractionSystem.Instance != null)
             {
                 InteractionSystem.Instance.ShowSubtitle(
-                    "[PLANTÃO]: \"...a mulher e as duas filhas do casal foram encontradas mortas dentro do quarto dos fundos, trancado por fora. O marido continuava sentado na sala.\"",
+                    "[PLANTÃO]: \"...a mulher e as duas crianças foram encontradas mortas no quarto dos fundos, trancado por fora. O marido continuava sentado na sala.\"",
                     6.8f
                 );
             }
@@ -623,7 +623,7 @@ namespace Canal420.Interaction
             if (InteractionSystem.Instance != null)
             {
                 InteractionSystem.Instance.ShowSubtitle(
-                    "Mortas...? Dez de setembro de noventa e quatro. Se a polícia entrou aqui naquela noite... como eu ainda tô nessa sala?",
+                    "Mortas?... Dez de setembro de noventa e quatro. Minha cabeça tá doendo demais, não consigo entender isso... eu tô no inferno?",
                     7.2f
                 );
             }
@@ -656,7 +656,7 @@ namespace Canal420.Interaction
             if (InteractionSystem.Instance != null)
             {
                 InteractionSystem.Instance.ShowSubtitle(
-                    "Tá entrando aquele mesmo canal por cima!",
+                    "Ah, esse canal... Ele me faz sentir bem.",
                     5.4f
                 );
             }

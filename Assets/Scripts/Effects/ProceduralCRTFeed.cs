@@ -1371,14 +1371,14 @@ namespace Canal420.Effects
                     DrawBitmapString("NOITE", 16, 5, 1, 0.92f, 0.86f, 0.65f);
 
                     // Clean seamless full-width marquee across bottom-right ribbon [64..Width-8]
-                    string newsTicker = "BAIXADA - CORTES NO SETOR E BALANCOS DA SEMANA   SANTOS 19C";
+                    string newsTicker = "BAIXADA - CORTES NO SETOR ADMINISTRATIVO   SANTOS 19C";
                     int scrollOffset = Mathf.RoundToInt(t * 36f) % 430;
                     DrawBitmapStringClipped(newsTicker, Width - 6 - scrollOffset, 9, 64, Width - 8, 1, 0.94f, 0.95f, 0.98f);
                 }
             }
             else if (mode == CRTFeedMode.BroadcastChannel09 && Mathf.Repeat(t, 7.6f) < 4.0f)
             {
-                DrawBitmapString("BAIXADA 19C  CHUVA E NEVOEIRO", 14, 10, 1, 0.88f, 0.98f, 0.94f);
+                DrawBitmapString("BAIXADA 19C  NEBLINA NA SERRA", 14, 10, 1, 0.88f, 0.98f, 0.94f);
             }
             else if (mode == CRTFeedMode.BroadcastChannel17)
             {
@@ -1386,7 +1386,7 @@ namespace Canal420.Effects
                 if (cyc < 4.4f)
                 {
                     DrawBitmapString("SO HOJE", 164, 48, 1, 0.14f, 0.08f, 0.05f);
-                    string promoTicker = "LIGUE JA 0800-1995   ULTIMAS UNIDADES";
+                    string promoTicker = "LIGUE 0800-1995   ULTIMAS UNIDADES";
                     int scr = Mathf.RoundToInt(t * 34f) % 390;
                     DrawBitmapStringClipped(promoTicker, Width - 8 - scr, 8, 10, Width - 10, 1, 0.98f, 0.92f, 0.62f);
                 }

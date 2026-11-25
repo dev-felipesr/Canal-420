@@ -30,9 +30,9 @@ namespace Canal420.Puzzles
         [SerializeField] private string noPowerPrompt = "Olhar o cofre";
         [SerializeField] private string interactPrompt = "Digitar senha no cofre";
         [TextArea(2, 4)]
-        [SerializeField] private string noPowerSubtitle = "O teclado tá apagado. Sem força nessa parede... tenho que olhar o quadro de força na cozinha.";
+        [SerializeField] private string noPowerSubtitle = "Não acende... tá sem energia nessa parede.";
         [TextArea(2, 4)]
-        [SerializeField] private string unlockedSubtitle = "Uma chave... É a da porta do fundo.";
+        [SerializeField] private string unlockedSubtitle = "A chave... é a da porta do fundo.";
         [SerializeField] private float subtitleDuration = 6.0f;
 
         [Header("Referências Físicas")]

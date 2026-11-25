@@ -65,62 +65,62 @@
 
 #### Despertar e Fluxo Obrigatório
 - **Ao acordar no Quarto do Casal (`DayManager.cs`):**
-  > "Já escureceu. Preciso jogar uma água no rosto."
+  > "Já tá escuro... preciso lavar o rosto."
 - **Pia do Banheiro (`lavar_rosto` — `Pia_Teste`):**
-  - *1ª vez:* "Água gelada. Essa dor atrás do olho não sai por nada."
-  - *Repetição:* "Mais água não vai resolver dormir duas horas por noite."
+  - *1ª vez:* "Nem água fria tá tirando essa dor de cabeça."
+  - *Repetição:* "Não tá adiantando nada."
 - **Secretária Eletrônica (`checar_secretaria` — `Secretaria_Eletronica_D1`):**
-  - *1ª vez:* `[BIP] "Cian? Tavares aqui. Liguei no seu ramal e nada... O lote de outubro voltou inteiro errado. Segunda, oito em ponto, resolve isso na minha sala."`
-  - *Repetição:* "Não vou ficar ouvindo cobrança num domingo à noite."
+  - *1ª vez:* `[BIP] "Cian, aqui é o Tavares. O lote de outubro voltou errado de novo. Não sei o que tá acontecendo com você, mas segunda às oito eu quero isso resolvido na minha sala."`
+  - *Repetição:* "Hoje é domingo, não vou ficar ouvindo isso."
 - **Porta do Escritório (`Porta_Escritorio_Pivot` — trancada sem chave):**
-  > "Trancada. Passei a chave ontem à noite."
+  > "Tá trancada. Eu não lembro de ter passado a chave."
 - **Pratinho de Chaves na Copa (`pegar_chave_escritorio` — `Pratinho_Chaves_Copa`):**
-  > "Tá aqui. A da fita azul é do escritório."
+  > "Ah, a chave do escritório tava aqui."
 - **Porta do Escritório (`Porta_Escritorio_Pivot` — ao destrancar):**
-  > "Cheiro de papel velho..."
+  > "Tá quente aqui dentro."
 - **Papéis na Escrivaninha (`olhar_papeis` — `Papeis_Teste` — após ler Documento #1):**
-  - *Pós-leitura:* "Terceira vez que devolvem esse fechamento..."
-  - *Repetição:* "Os números estão todos embaralhados."
+  - *Pós-leitura:* "De novo isso... eu tenho certeza que já tinha conferido."
+  - *Repetição:* "Não tô conseguindo acompanhar esses números."
 - **Calendário do Escritório (`checar_calendario` — `Calendario_Dia1_Interagir`):**
-  - *1ª vez:* "Domingo, 29 de outubro de 1995. Mais uma semana inteira riscada."
-  - *Repetição:* "29 de outubro. Amanhã cedo começa tudo de novo."
+  - *1ª vez:* "Dia vinte e nove... passou outra semana e eu nem vi."
+  - *Repetição:* "Amanhã já é segunda de novo."
 - **Tentar sentar na TV antes de concluir as tarefas do Dia 1 (`DayManager.cs`):**
-  > "Se eu sentar agora, eu apago. Preciso resolver o que ficou pendente antes."
+  > "Se eu sentar agora eu vou apagar. Melhor resolver o resto antes."
 - **Tentar sentar na TV sem pilhas no controle (`DayManager.cs`):**
-  > "O botão do painel tá afundado e o controle sem pilhas. Acho que tem alguma naquela lanterna da cozinha."
+  > "O controle tá sem pilha... acho que tem na lanterna da cozinha."
 - **Pilhas na Primeira Gaveta da Cozinha (`pilhas_controle_task` — `Pilhas_Controle_D1`):**
-  > "Duas pilhas. Serve pro controle."
+  > "Acho que essas ainda funcionam."
 
 #### Sequência da TV de Tubo no Dia 1 (`TVController.cs`)
 - **Canal 04 (Telejornal):**
-  > `[CANAL 04]: "...o enxugamento no setor administrativo já fechou mais de quatro mil vagas de escritório só neste semestre no estado..."`
+  > `[CANAL 04]: "...só neste semestre já foram fechadas mais de quatro mil vagas em escritórios no estado..."`
 - **Canal 09 (Previsão do Tempo):**
-  > `[CANAL 09]: "...frente fria estacionada na serra mantém neblina fechada na Baixada até quarta-feira..." A antena tá puxando dois canais juntos.`
+  > `[CANAL 09]: "...a neblina deve continuar fechada na Baixada até quarta-feira, com baixa visibilidade na serra..."`
 - **Canal 17 (Televendas):**
-  > `[CANAL 17]: "...café passado em quatro minutos, direto na jarra térmica! Ligue 0800..."`
+  > `[CANAL 17]: "...café pronto em quatro minutos! Ligue agora, 0800..."`
 - **Canal 420 — 1ª sintonização:**
-  > "Nunca entrou sinal nessa faixa. Essas cores estão dando um sono estranho."
+  > "Que canal é esse?... Esse barulho tá me dando tontura."
 - **Canal 420 — 2ª tentativa (trocar de canal):**
-  > "Não mudou. A imagem tá derretendo..."
+  > "Não tá mudando..."
 - **Canal 420 — 3ª tentativa (desligar / apagão para o Dia 2):**
-  > "Apertei pra desligar e não vai. Meu braço tá pesado... não tô conseguindo levantar."
+  > "Não desliga... não tô conseguindo levantar o braço."
 
 #### Inspeções Opcionais do Dia 1 (`Canal420GreyboxBuilder.cs`)
 - **Quadro de Força (`quadro_forca_opc` — `Quadro_Forca_Dia1`):**
-  - *1ª vez:* "Corredor, sala, cozinha..."
-  - *Repetição:* "Tudo armado."
+  - *1ª vez:* "Tá tudo normal aqui."
+  - *Repetição:* "Tudo ligado."
 - **Espelho do Banheiro (`espelho_dia1_opc` — `Espelho_Dia1`):**
-  - *1ª vez:* "Olheira funda, barba por fazer. Pareço mais velho do que sou."
-  - *Repetição:* "Melhor sair da frente do vidro."
+  - *1ª vez:* "Olha a minha cara... preciso dormir."
+  - *Repetição:* "Melhor não ficar olhando."
 - **Fotografias do Corredor (`quadros_familia_d1_opc`):**
-  - *1ª vez:* "Eu bati essa foto num domingo qualquer no quintal. Nunca paro aqui pra olhar."
-  - *Repetição:* "Passo reto por esse corredor todo dia."
+  - *1ª vez:* "Faz tempo que eu passo aqui e nem olho pra isso."
+  - *Repetição:* "Não quero ficar parado olhando."
 - **Retrato de Margaret (`retrato_margaret_d1_opc`):**
-  - *1ª vez:* "Faz tempo que ninguém tira isso pra limpar."
-  - *Repetição:* "O vidro tá opaco de poeira."
+  - *1ª vez:* "Tá cheio de poeira... faz tempo que ninguém limpa."
+  - *Repetição:* "Precisa limpar esse vidro."
 - **Casaco Cinza de Margaret no Guarda-Roupa (`guarda_roupa_d1_opc` — `Casaco_Margaret_GuardaRoupa_D1`):**
-  - *1ª vez:* "As roupas dela continuam penduradas no mesmo canto. Não mexo aí."
-  - *Repetição:* "Cheiro forte."
+  - *1ª vez:* "As roupas dela ainda tão aqui... eu não mexo nesse lado."
+  - *Repetição:* "Que cheiro forte..."
 
 ---
 
@@ -128,67 +128,67 @@
 
 #### Despertar e Fluxo Obrigatório
 - **Ao acordar no Sofá (`DayManager.cs`):**
-  > "Que gosto ruim na boca..."
+  > "Que gosto ruim na boca... que horas são?"
 - **Frascos e Receituário na Mesa de Centro (`frascos_calmantes_dia2` — `Frascos_MesaCentro` — após ler Documento #2):**
-  - *Pós-leitura:* "A receita venceu faz quase um ano."
+  - *Pós-leitura:* "Essa receita é do ano passado."
   - *Repetição:* "Os dois frascos tão vazios."
 - **Secretária Eletrônica sem fita (`secretaria_fita_dia2` — `Secretaria_Eletronica_D2`):**
-  > "Tá sem fita, só apitando. Devo ter deixado em algum canto ontem à noite."
+  > "Tá sem a fita, só nesse apito... onde é que eu deixei isso?"
 - **Fita Cassete na Borda da Pia (`pegar_fita_banheiro_dia2` — `Fita_Cassete_D2`):**
-  > "Tava jogada aqui na pia molhada. Devo ter arrancado da secretária ontem de noite sem perceber."
+  > "Tá toda molhada."
 - **Secretária Eletrônica com a fita (`secretaria_fita_dia2` — `Secretaria_Eletronica_D2`):**
-  - *1ª vez:* `[BIP] Sexta-feira, 23h58. Só chiado e alguém respirando...`
-  - *Repetição:* "Não era recado de trabalho..."
+  - *1ª vez:* `[BIP] Sábado, 22h47. ... Tem alguém respirando na gravação.`
+  - *Repetição:* "Quem deixou isso gravado?"
 
 #### Eventos Psicológicos, Corredor e Espelho no Dia 2
 - **Gatilho 1 — Vulto no Corredor (`vulto_corredor` — `Trigger_1_VultoCorredor`):**
-  > "Tem alguém aqui?... Não. Deve ser o efeito do remédio na vista."
+  > "Ei, tem alguém aí?... Não, não tem ninguém. É esse remédio."
 - **Gatilho 2 — Quadros Familiares Rachando (`quadros_familia_alterados` — `Trigger_2_QuadrosFamilia`):**
-  > "Os quadros racharam..."
+  > "Que barulho foi esse?... Os quadros quebraram."
 - **Gatilho 3 — Sussurros atrás da Porta (`pre_sussurros_corredor` — `Trigger_3_SussurrosPorta`):**
   - *(Sem legenda — apenas áudio abafado de sussurros e canção de ninar.)*
 - **Porta Trancada do Fundo no Dia 2 (`Porta_Quarto_Pivot` — configurado por `DayManager.cs`):**
-  - *Antes de ouvir a fita da secretária:* "Trancada... A madeira inchada estala com a umidade."
-  - *Após ouvir a fita da secretária:* "Não tem ninguém aí dentro... Preciso voltar pra sala."
+  - *Antes de ouvir a fita da secretária:* "Tá trancada... não vai abrir."
+  - *Após ouvir a fita da secretária:* "Não tem ninguém aí dentro..."
 - **Aparição no Espelho do Banheiro (`MirrorHauntController.cs`):**
-  - *Ao se virar após ver o vulto na porta pelo reflexo:* "Tenho certeza que tinha alguém ali... Não tem ninguém aqui."
-  - *Discrepância do estado da porta no reflexo (se a porta física está fechada):* "No espelho a porta tava entreaberta... Ela tá fechada."
+  - *Ao se virar após ver o vulto na porta pelo reflexo:* "Espera... tinha alguém na porta."
+  - *Discrepância do estado da porta no reflexo (se a porta física está fechada):* "Ué... no espelho ela tava aberta."
   - *Discrepância do estado da porta no reflexo (se a porta física está aberta):* "No espelho a porta tava quase fechada..."
 - **Guarda-Roupa Entreaberto Sozinho no Dia 2 (`AnimatedContainerInteractable.cs` / `DayManager.cs`):**
-  > "Pensei ter deixado tudo fechado ontem."
+  > "Me lembro de ter fechado essa porta ontem."
 
 #### Sequência da TV Autônoma no Dia 2 (`TVController.cs`)
 - **Tocar na TV enquanto desligada (`Day2_OffIdle`):**
-  > "O vidro ainda tá morno. Não lembro a que horas desliguei isso."
+  > "Ainda tá quente... eu não lembro quando desliguei."
 - **TV ligando sozinha na sala (`ActivateDay2AutonomousNews`):**
-  - *Se o jogador já estiver na sala:* "A televisão ligou sozinha..."
-  - *Se o jogador estiver fora da sala:* "Tem alguém na sala? A televisão ligou sozinha."
+  - *Se o jogador já estiver na sala:* "Ligou sozinha?"
+  - *Se o jogador estiver fora da sala:* "Tem alguém na sala?"
 - **Plantão Especial de 1994 (Parte 1):**
-  > `[PLANTÃO]: "...a Polícia Civil isolou agora à noite uma casa no fim da Rua das Acácias, após vizinhos ligarem pro 190 ouvindo gritos e pancadas..."`
+  > `[PLANTÃO]: "...a Polícia Civil isolou agora à noite uma casa no fim da Rua das Acácias, depois que vizinhos ligaram pro 190 ouvindo gritos lá dentro..."`
 - **Plantão Especial de 1994 (Parte 2):**
-  > `[PLANTÃO]: "...a mulher e as duas filhas foram encontradas mortas dentro do quarto dos fundos, trancado por fora. O marido continuava sentado na sala."`
+  > `[PLANTÃO]: "...a mulher e as duas crianças foram encontradas mortas no quarto dos fundos, trancado por fora. O marido continuava sentado na sala."`
 - **Reação de Cian:**
-  > "Mortas...? Dez de setembro de noventa e quatro. Minha cabeça dói, como se eu não pudesse compreender isso. Este é o inferno?"
+  > "Mortas?... Dez de setembro de noventa e quatro. Minha cabeça tá doendo demais, não consigo entender isso... eu tô no inferno?"
 - **Invasão do Canal 420 (transição para o Dia 3):**
-  > "Tá entrando aquele mesmo canal por cima!"
+  > "Ah, esse canal... Ele me faz sentir bem."
 
 #### Inspeções Opcionais do Dia 2 (`Canal420GreyboxBuilder.cs`)
 - **Espelho do Banheiro (`espelho_dia2_opc` — `Espelho_Dia2`):**
   - *Flash de dissociação:* `A PORTA DO FUNDO`
-  - *1ª vez:* "Pálpebra caída, boca pastosa de remédio."
-  - *Repetição:* "Não quero ficar olhando pra isso."
+  - *1ª vez:* "Tô com a vista pesada... parece que nem acordei direito."
+  - *Repetição:* "Não quero ficar me olhando."
 - **Calendário do Escritório (`calendario_d2_opc`):**
-  - *1ª vez:* "Outubro de 1995. Segunda, eu acho."
-  - *Repetição:* "Outubro de 1995."
+  - *1ª vez:* "Hoje é segunda, nem liguei para avisar."
+  - *Repetição:* "Aviso depois."
 - **Lanterna Vazia na Gaveta da Cozinha (`lanterna_vazia_d2_opc`):**
-  - *1ª vez:* "Sem pilha nenhuma. Tirei ontem de noite."
-  - *Repetição:* "Vazia."
+  - *1ª vez:* "Tá sem pilha, eu tirei ontem."
+  - *Repetição:* "Continua sem pilha."
 - **Quadro de Força (`quadro_forca_d2_opc`):**
-  - *1ª vez:* "Tem um chiado elétrico dentro dessa caixa."
-  - *Repetição:* "Melhor não mexer nisso agora."
+  - *1ª vez:* "Tá fazendo um barulho estranho aqui dentro."
+  - *Repetição:* "Melhor não mexer nisso."
 - **Casaco Cinza de Margaret (`casaco_margaret_d2_opc`):**
-  - *1ª vez:* "A manga do casaco encostou no meu braço..."
-  - *Repetição:* "Deixa a porta fechada."
+  - *1ª vez:* "A manga encostou no meu braço... tá gelada."
+  - *Repetição:* "Deixa fechado."
 
 ---
 
@@ -196,74 +196,74 @@
 
 #### Despertar e Bloqueios Iniciais (`DayManager.cs`)
 - **Ao acordar no escuro na Sala (`DayManager.cs`):**
-  > "O que aconteceu ontem... Caiu a força da casa inteira. Preciso da lanterna."
+  > "Que que aconteceu?... Acabou a luz. Preciso achar a lanterna."
 - **Tentar mexer no Quadro de Força ou Retrato de Margaret sem a lanterna:**
-  > "Tá escuro demais pra mexer nisso agora. A lanterna tá na primeira gaveta da cozinha."
+  > "Não dá pra ver nada aqui. Preciso da lanterna."
 - **Tentar mexer nas Cápsulas Estimulantes sem a lanterna:**
-  > "Tá escuro demais pra mexer nesses remédios agora. Preciso pegar a lanterna primeiro."
+  > "Tá escuro demais, não consigo nem ver o que tô pegando."
 - **Tentar mexer no Quadro de Força ou Retrato de Margaret antes de engolir a 1ª cápsula:**
-  > "Minha vista tá escurecendo de novo... Se eu não tomar aquelas pílulas na mesa da sala, vou apagar aqui."
+  > "Minha vista tá escurecendo de novo... preciso tomar aquelas pílulas na sala antes que eu apague."
 - **Tentar tomar cápsula fora de contexto:**
   > "Agora não."
 
 #### Progressão Principal do Dia 3
 - **Lanterna na Primeira Gaveta da Cozinha (`pegar_lanterna_dia3` — `Lanterna_Dia3`):**
-  > "Me lembro de ter tirado as pilhas dessa lanterna... Pelo menos tá acendendo."
+  > "Espera... eu tinha tirado as pilhas dessa lanterna. Como é que ela tá acendendo?"
 - **Frasco Manipulado na Mesa de Centro (`estimulante_frasco_dia3_opc` — `Frasco_Estimulante_Dia3` — após ler Documento #3):**
-  - *Pós-leitura:* "Fenproporex com cafeína. A data tá raspada... parece etiqueta de farmácia ou de clínica. Preciso engolir uma cápsula antes de apagar de novo."
+  - *Pós-leitura:* "A data tá raspada... nem lembro de ter comprado isso. Preciso tomar uma logo."
   - *Repetição:* "Fenproporex com cafeína."
 - **Cápsulas Estimulantes (`engolir_capsula_dia3` — `Capsulas_Estimulante_Dia3`):**
-  - *1ª cápsula:* "Agora consigo checar o quadro de força."
-  - *2ª cápsula (última):* "A última cápsula."
-  - *Se tentar repetir durante cooldown:* "O coração já tá disparado. Preciso esperar antes de engolir outra."
+  - *1ª cápsula:* "Que gosto horrível... pelo menos a tontura passou."
+  - *2ª cápsula (última):* "Essa era a última."
+  - *Se tentar repetir durante cooldown:* "Meu coração já tá disparado, melhor esperar um pouco."
 - **Quadro de Força sem fusível (`restaurar_energia_dia3` — `Quadro_Forca_Dia3`):**
-  > "O cartucho queimou na chave do corredor. Deve ter um reserva na caixa de ferramentas."
+  > "O fusível do corredor queimou. Acho que tem outro na caixa de ferramentas."
 - **Fusível na Caixa de Ferramentas do Banheiro (`pegar_fusivel_dia3` — `Fusivel_Ceramico_Pickup_D3`):**
-  > "Achei um fusível no fundo da caixa."
+  > "Tem um aqui no fundo. Ainda tá inteiro."
 - **Quadro de Força com fusível (`restaurar_energia_dia3` — `Quadro_Forca_Dia3`):**
-  - *Ao trocar:* "Estalou. A luz do corredor voltou."
+  - *Ao trocar:* "Voltou... mas só acendeu o corredor."
   - *Repetição:* "Já tá ligado."
 - **Retrato de Margaret no Corredor Leste (`FallingPictureFrame.cs` — `Quadro_Margaret_Parede`):**
-  > "O arame arrebentou... Não queria me lembrar desse cofre."
+  > "O arame soltou. Eu não queria me lembrar desse cofre."
 - **Cofre de Parede (`SafeBoxPuzzle.cs` — `Cofre_Parede_1009`):**
-  - *Sem energia no corredor:* "O teclado tá apagado. Sem força nessa parede... tenho que olhar o quadro de força na cozinha."
-  - *Ao digitar `1009` e abrir:* "Uma chave... É a da porta do fundo."
+  - *Sem energia no corredor:* "Não acende... tá sem energia nessa parede."
+  - *Ao digitar `1009` e abrir:* "A chave... é a da porta do fundo."
 - **Chave Escondida no Casaco Cinza (`chave_arquivo_pessoal_dia3` — `Guarda_Roupa_Casacos_D3`):**
-  > "Uma chave escondida no fundo do bolso dela. É da gaveta alta do meu arquivo no escritório."
+  > "Tem uma chave aqui no bolso dela... parece a da gaveta do meu arquivo."
 
 #### Pistas Documentais e Inspeções Opcionais do Dia 3
 - **Agenda Rasgada na Cabeceira (`agenda_margaret_dia3_opc` — após ler Documento #4):**
-  - *Flash de dissociação:* `10 DE SETEMBRO - EU TRANQUEI`
+  - *Flash de dissociação:* `10/09 — NÃO ABRE`
   - *Pós-leitura:* "Ela escreveu isso no sábado de manhã..."
-  - *Repetição:* "Ela só queria conversar comigo naquela noite."
+  - *Repetição:* "Ela só queria conversar."
 - **Bilhete Dobrado no Escritório (`bilhete_margaret_dia3_opc` — após ler Documento #5):**
-  - *Pós-leitura:* "Tava dobrado debaixo das pastas desde aquela sexta... Nem li o que ela pediu."
-  - *Repetição:* "Ela deixou o jantar no forno e foi deitar com as meninas."
+  - *Pós-leitura:* "Tava aqui debaixo das pastas esse tempo todo... eu nem cheguei a ler."
+  - *Repetição:* "Eu deixei aqui sem abrir."
 - **Folha de Baixo do Calendário (`calendario_folha_anterior_opc` — após ler Documento #6):**
-  - *Pós-leitura:* "Folha de setembro do ano passado embaixo do bloco novo. Não me lembrava que ainda estava ai."
-  - *Repetição:* "O último risco quase furou o papel no dia nove."
+  - *Pós-leitura:* "A folha de setembro do ano passado ainda tava aqui embaixo... nem lembrava disso."
+  - *Repetição:* "Não tem nada marcado depois do dia nove."
 - **Calendário do Escritório (`calendario_d3_opc`):**
-  - *1ª vez:* "Um mês inteiro riscado em cima do outro... Eu só troquei a folha pra fingir que o ano continuou."
-  - *Repetição:* "Outubro por cima de setembro."
+  - *1ª vez:* "Um monte de dia riscado... eu já nem sei mais em que mês eu tô."
+  - *Repetição:* "Outubro em cima de setembro."
 - **Secretária Eletrônica (`secretaria_d3_opc`):**
-  - *1ª vez:* "Arranquei da tomada. Não aguentava mais esse apito."
-  - *Repetição:* "Fora da tomada."
+  - *1ª vez:* "Eu puxei da tomada porque não aguentava mais esse apito."
+  - *Repetição:* "Tá fora da tomada."
 - **Evento Psicológico — LED Fantasma na Secretária (`PsychologicalHorrorDirector.cs`, após ler o recorte de jornal):**
-  > "Tá fora da tomada..."
+  > "Mas... ela tá fora da tomada."
 - **TV Desligada no Dia 3 (`TVController.cs` — `Day3_SilentGlass`):**
-  > "Sem luz na sala, mas o tubo ainda dá uns estalos por dentro."
+  > "Não tem luz na casa, mas o vidro ainda tá estalando."
 - **Espelho do Banheiro (`espelho_dia3_opc` — `Espelho_Dia3`):**
-  - *Flash de dissociação:* `NÃO SOU EU`
-  - *1ª vez:* "Pupila aberta demais na penumbra. Parece outra pessoa encarando de volta."
-  - *Repetição:* "O vidro escuro devolve mais sombra do que rosto."
+  - *Flash de dissociação:* `VOCÊ OUVIU`
+  - *1ª vez:* "Olha o tamanho da minha pupila... tem alguma coisa errada comigo."
+  - *Repetição:* "Tá escuro demais pra ver direito."
 
 #### Clímax — Destrancando a Porta do Quarto das Filhas (`DayManager.cs`)
 - **Ao destrancar `Porta_Quarto_Pivot` com a chave do cofre:**
   > "..."
 - **Se Cian hesitar na soleira por 5 segundos sem entrar (`RunMargaretDoorTrapSequenceRoutine`):**
-  > "Abriu... Tá tudo quieto lá dentro."
+  > "Não tem barulho nenhum lá dentro..."
 - **Se Cian tentar recuar de volta pelo corredor (`z < 3.10`):**
-  > "Não dá mais pra voltar pro sofá."
+  > "Não adianta tentar voltar agora."
 - **Ao ver Margaret dentro do quarto (antes do ataque):**
   > "Margaret..."
 
@@ -274,11 +274,11 @@
 *(Cian está sentado dentro do quarto iluminado pela manhã; movimentação bloqueada, olhar restrito.)*
 
 - **Fala 1 (abertura do Dia 4 — `DayManager.cs`):**
-  > "O cobertor pequeno continua dobrado no pé da cama, do jeito que ela deixou."
+  > "A coberta ainda tá dobrada no pé da cama, do jeito que ela deixou."
 - **Fala 2 (confissão — `DayManager.cs`):**
-  > "Eu girei a chave pelo lado de fora, tomei dois comprimidos pra não ouvir mais nada... e aumentei o volume da TV."
+  > "Eu passei a chave por fora... tomei os remédios e deixei a TV alta até não ouvir mais nada."
 - **Fala 3 (encerramento — `DayManager.cs`):**
-  > "Não sei mais que ano é hoje... nem se algum dia eu realmente saí dessa sala."
+  > "Nem sei mais que ano é hoje... acho que eu nunca saí daqui."
 
 ---
 
@@ -286,72 +286,72 @@
 
 #### Objetos Dinâmicos por Dia (`DayManager.cs`)
 - **Porta da Rua (`Porta_Rua_Interagir`):**
-  - *Base (`Canal420GreyboxBuilder.cs`):* "Duas voltas na chave e corrente passada. Não abro essa porta pra ninguém." | *Rep:* "Cheia de folheto acumulado por baixo."
-  - *Dia 1:* "Duas voltas na chave e corrente passada. Nem um carro passa na rua lá fora... Não abro essa porta pra ninguém." | *Rep:* "Cheia de folheto sem data acumulado por baixo."
-  - *Dia 2:* "A corrente tá esticada e a tranca pesada demais." | *Rep:* "Duas voltas na chave. A rua parece longe demais."
-  - *Dia 3 (antes de abrir o cofre):* "Não adianta puxar a corrente no escuro... Tudo o que eu escondi tá do outro lado do corredor, não lá fora." | *Rep:* "Não tem saída por aqui."
-  - *Dia 3 (após pegar a chave do cofre):* "Essa chave de latão não é daqui. Eu sei muito bem qual porta ela abre." | *Rep:* "Não é por aqui que isso acaba."
+  - *Base (`Canal420GreyboxBuilder.cs`):* "Duas voltas na chave e a corrente passada. Não quero abrir pra ninguém." | *Rep:* "Um monte de folheto acumulado por baixo."
+  - *Dia 1:* "Duas voltas na chave e a corrente. A rua tá vazia... não vou abrir isso." | *Rep:* "Cheio de folheto velho por baixo."
+  - *Dia 2:* "A corrente tá travada... e eu nem tenho força pra mexer nisso agora." | *Rep:* "Não consigo nem pensar em sair na rua."
+  - *Dia 3 (antes de abrir o cofre):* "Não adianta tentar abrir agora... não é lá fora que isso vai se resolver." | *Rep:* "Não vou sair por aqui."
+  - *Dia 3 (após pegar a chave do cofre):* "Essa chave não é daqui. Eu sei qual porta ela abre." | *Rep:* "Não é essa porta."
 - **Despertador do Quarto (`despertador_quarto_opc`):**
-  - *Dia 1 (17h40):* "Cinco e quarenta. Olho pra esse relógio toda hora esperando dar segunda." | *Rep:* "Cinco e quarenta."
-  - *Dia 2 (10h15):* "Passa das dez da manhã... O expediente no escritório já começou faz tempo." | *Rep:* "Dez e quinze. Nem liguei pra avisar."
-  - *Dia 3 (03h12):* "Três e doze... Não sei se é madrugada de terça ou se esse relógio parou faz tempo." | *Rep:* "Três e doze."
+  - *Dia 1 (17h40):* "Cinco e quarenta. Já parece tarde da noite." | *Rep:* "Cinco e quarenta."
+  - *Dia 2 (10h15):* "Já passa das dez... perdi a hora do escritório." | *Rep:* "Dez e quinze. E eu nem liguei pra avisar."
+  - *Dia 3 (03h12):* "Três e doze... será que esse relógio parou?" | *Rep:* "Continua marcando três e doze."
 
 #### Portas (`DoorInteractable.cs` e `Canal420GreyboxBuilder.cs`)
 - **Fallback genérico de porta (`DoorInteractable.cs`):**
-  - *Trancada:* "Está trancada."
-  - *Destrancada:* "Destranquei a porta."
+  - *Trancada:* "Tá trancada."
+  - *Destrancada:* "Abriu."
 - **Porta do Quarto das Filhas (`Porta_Quarto_Pivot` — padrão Dia 1 e Dia 3 antes da chave):**
-  > "Trancada por fora faz tempo. Não tenho nada pra pegar aí dentro."
+  > "Tá trancada faz tempo. Não tenho nada pra fazer aí dentro."
 
 #### Objetos Permanentes Opcionais da Casa (`Canal420GreyboxBuilder.cs` e `Canal420PropDetailBuilders.cs`)
 - **Dentro do Rack da TV (`compartimento_rack_opc`):**
-  - *1ª vez:* "Fitas velhas da família e carnês vencidos no fundo do rack." | *Rep:* "Só poeira e papel velho."
+  - *1ª vez:* "Umas fitas velhas e um monte de conta vencida." | *Rep:* "Só poeira e papel."
 - **Estante da Sala (`estante_sala_opc`):**
-  - *1ª vez:* "Virei esse retrato pra parede faz meses. Nem sei por que ainda não tirei daqui." | *Rep:* "Deixa virado."
+  - *1ª vez:* "Eu virei esse retrato pra parede... nem lembro quando foi." | *Rep:* "Deixa assim."
 - **Poltrona da Sala (`poltrona_opc`):**
-  - *1ª vez:* "A manta dela continua dobrada no braço. Ninguém senta aqui faz tempo." | *Rep:* "Cheiro de pano guardado."
+  - *1ª vez:* "A manta dela ainda tá dobrada aí. Faz tempo que ninguém senta." | *Rep:* "Cheiro de roupa guardada."
 - **Geladeira — Bilhetes e Boletos (`geladeira_bilhetes_opc`):**
-  - *1ª vez:* "Boletos vencidos e a lista dela no ímã: leite, maçã, sabonete infantil. Nunca tirei daí." | *Rep:* "A tinta da caneta já tá desbotada."
+  - *1ª vez:* "Um monte de conta vencida... e a lista de mercado dela no ímã. Nunca tirei." | *Rep:* "A tinta já tá quase apagando."
 - **Embaixo da Pia da Cozinha (`armario_pia_cozinha_opc`):**
-  - *1ª vez:* "Resto de detergente e jornal velho cobrindo a madeira úmida." | *Rep:* "Cheiro de madeira molhada."
+  - *1ª vez:* "Só resto de detergente e jornal velho." | *Rep:* "Cheiro de madeira úmida."
 - **Gaveta de Talheres (`gaveta_talheres_opc`):**
-  - *1ª vez / Rep:* "Só uso o mesmo garfo e a mesma caneca todo dia."
+  - *1ª vez / Rep:* "Acabo usando sempre o mesmo garfo e a mesma caneca."
 - **Fogão (`fogao_opc`):**
-  - *1ª vez:* "Faz dias que só uso uma boca pra esquentar água pro café." | *Rep:* "Frio."
+  - *1ª vez:* "Só tenho usado uma boca pra esquentar água do café." | *Rep:* "Tá frio."
 - **Mesa de Jantar / Copa (`mesa_jantar_opc`):**
   - *1ª vez:* "Cobrança e sujeira." | *Rep:* "Já esteve cheia."
 - **Gabinete do Banheiro (`gabinete_banheiro_opc`):**
-  - *1ª vez:* "Pano encardido e água sanitária. Faz tempo que não limpo essa casa." | *Rep:* "Nada de útil aqui."
+  - *1ª vez:* "Pano sujo e água sanitária. Faz tempo que não limpo nada aqui." | *Rep:* "Não tem nada que eu precise."
 - **Armário de Remédios (`armario_remedios_opc`):**
-  - *1ª vez:* "Tomo quase todo dia pra conseguir dormir." | *Rep:* "Metade das caixas já acabou."
+  - *1ª vez:* "Sem esses remédios eu não consigo dormir." | *Rep:* "Quase todas as caixas já acabaram."
 - **Box / Chuveiro (`chuveiro_opc`):**
-  - *1ª vez:* "Não tomo banho. Sinto que sou observado quando tomo." | *Rep:* "O ralo tá seco."
+  - *1ª vez:* "Eu evito entrar aí... fico sentindo que tem alguém me olhando." | *Rep:* "O ralo tá seco."
 - **Outro Lado da Cama (`lado_cama_margaret_opc`):**
-  - *1ª vez:* "Mesmo sozinho, eu só durmo na minha ponta." | *Rep:* "Não passo da metade."
+  - *1ª vez:* "Mesmo sozinho, eu só consigo dormir na minha ponta." | *Rep:* "Não passo pro lado de lá."
 - **Gaveta do Criado-Mudo de Cian (`gaveta_criado_cian_opc`):**
-  - *1ª vez:* "Cartelas vazias e recibo velho." | *Rep:* "Só lixo de remédio."
+  - *1ª vez:* "Só cartela vazia e recibo velho." | *Rep:* "Cheio de resto de remédio."
 - **Gaveta do Criado-Mudo de Margaret (`gaveta_margaret_trancada` — `AnimatedContainerInteractable`):**
-  - *1ª vez:* "Trancada. Nunca tive a chave desse lado." | *Rep:* "Continua trancada."
+  - *1ª vez:* "Tá trancada. Eu nunca tive a chave desse lado." | *Rep:* "Não abre."
 - **Guarda-Roupa — Ternos (`guarda_roupa_ternos_opc`):**
-  - *1ª vez:* "Cheiro de mofo e naftalina. Uso o mesmo terno toda semana." | *Rep:* "Sempre a mesma roupa."
+  - *1ª vez:* "Cheiro de mofo... acabo usando sempre o mesmo terno." | *Rep:* "Sempre a mesma roupa."
 - **Cômoda — Gaveta Superior (`comoda_quarto_opc`):**
-  - *1ª vez:* "Faz meses que só revezo as mesmas três camisas sociais." | *Rep:* "Nada que preste aqui."
+  - *1ª vez:* "Só as mesmas três camisas de sempre." | *Rep:* "Não tem nada aqui."
 - **Cômoda — Gaveta do Meio (`gaveta_comoda_inferior` — `AnimatedContainerInteractable`):**
-  - *1ª abertura:* "Inchada de umidade. Só cobertor velho guardado aí embaixo."
+  - *1ª abertura:* "Tá difícil de abrir... só tem cobertor velho aqui embaixo."
 - **Cabideiro do Hall (`cabideiro_opc`):**
-  - *1ª vez:* "Esse guarda-chuva tá pendurado desde o ano passado." | *Rep:* "Ninguém mexe nisso."
+  - *1ª vez:* "Esse guarda-chuva tá aí desde o ano passado." | *Rep:* "Ninguém mexe nisso."
 - **Estante do Escritório (`estante_escritorio_opc`):**
-  - *1ª vez:* "Cinco anos de livro-caixa em ordem. Aqui dentro pelo menos os números fazem sentido." | *Rep:* "Os números batem. O resto não importa."
+  - *1ª vez:* "Cinco anos de arquivo em ordem. Pelo menos os números fazem sentido." | *Rep:* "Aqui dentro as coisas ainda batem."
 - **Formulário de Afastamento na Gaveta da Escrivaninha (`gaveta_afastamento_opc` — após ler Documento #7):**
-  - *Pós-leitura:* "Escrevi isso em agosto e larguei no fundo da gaveta. Se eu entregar pro Tavares, tô na rua."
-  - *Repetição:* "Quem pede licença lá dentro perde a mesa."
+  - *Pós-leitura:* "Preenchi isso em agosto e larguei aí. Se eu entregar pro Tavares, tô na rua."
+  - *Repetição:* "Nunca tive coragem de assinar."
 - **Arquivo Metálico — Gaveta do Meio (`arquivo_gaveta_media_opc` — definido em `Canal420PropDetailBuilders.cs`):**
-  - *1ª vez:* "Declarações de 92 e 93. Coisa antiga do escritório, tudo em ordem." | *Rep:* "Só arquivo antigo."
+  - *1ª vez:* "Papéis de 92 e 93. Tá tudo em ordem aqui." | *Rep:* "Só faltam as coisas de 94."
 - **Arquivo Metálico — Gaveta Alta (`arquivo_gaveta_alta` — definido em `Canal420PropDetailBuilders.cs`):**
   - *Trancada sem chave:* "Não abre. A fechadura tá toda riscada."
   - *Ao destrancar com a chave do casaco:* "A chave do bolso dela serviu."
 - **Recorte de Jornal de 1994 (`arquivo_metalico_opc` — definido em `Canal420PropDetailBuilders.cs` — após ler Documento #8):**
-  - *Pós-leitura:* "O pedaço onde dizia o desfecho foi arrancado..."
+  - *Pós-leitura:* "O final foi arrancado."
   - *Repetição:* "..."
 
 ---
@@ -363,8 +363,8 @@ Textos exibidos em glitch rápido (`InteractionSystem.ShowDissociationGlitchSubt
 | Objeto / ID | Dia | Texto do Flash | Origem |
 |---|---|---|---|
 | **Espelho do Banheiro (`espelho_dia2_opc`)** | Dia 2 | `A PORTA DO FUNDO` | `Canal420GreyboxBuilder.cs` |
-| **Espelho do Banheiro (`espelho_dia3_opc`)** | Dia 3 | `NÃO SOU EU` | `Canal420GreyboxBuilder.cs` |
-| **Agenda de Margaret (`agenda_margaret_dia3_opc`)** | Dia 3 | `10 DE SETEMBRO - EU TRANQUEI` | `Canal420GreyboxBuilder.cs` |
+| **Espelho do Banheiro (`espelho_dia3_opc`)** | Dia 3 | `VOCÊ OUVIU` | `Canal420GreyboxBuilder.cs` |
+| **Agenda de Margaret (`agenda_margaret_dia3_opc`)** | Dia 3 | `10/09 — NÃO ABRE` | `Canal420GreyboxBuilder.cs` |
 
 ---
 
@@ -378,18 +378,17 @@ Todos os **8 documentos** abertos em tela cheia via `InteractionSystem.ShowDocum
 - **Título:** `COMUNICAÇÃO INTERNA Nº 048/95`
 - **Texto integral:**
 ```text
-PARA: Cian Nabs - Analista Contábil Pleno
-DE: A. Tavares - Gerência Operacional
+PARA: Cian Nabs — Contabilidade
+DE: A. Tavares — Gerência
 
-Cian, os lotes 03, 07 e 11 da conciliação de outubro voltaram da
-diretoria com divergência de saldo de novo. Não sei o que está
-acontecendo com você nas últimas semanas.
+Cian, os lotes 03, 07 e 11 de outubro voltaram da diretoria de novo.
+Você lançou números repetidos do mês passado e errou as datas.
 
-Segunda-feira, às 08h00 em ponto, quero as três pastas refeitas
-na minha mesa. Outro atraso desses vai pro Departamento Pessoal.
+Segunda às 8h quero os três refeitos na minha mesa.
+Se acontecer outra vez, vou passar isso pro DP.
 ```
-- **Pensamento pós-leitura:** `"Terceira vez que devolvem esse fechamento..."`
-- **Pensamento na releitura:** `"Os números estão todos embaralhados."`
+- **Pensamento pós-leitura:** `"De novo isso... eu tenho certeza que já tinha conferido."`
+- **Pensamento na releitura:** `"Não tô conseguindo acompanhar esses números."`
 - **Origem:** `Canal420GreyboxBuilder.cs`
 
 ---
@@ -397,18 +396,18 @@ na minha mesa. Outro atraso desses vai pro Departamento Pessoal.
 ### Documento 2 — Receituário de Clonazepam (`frascos_calmantes_dia2`)
 - **Dia / Local:** Dia 2 — Mesa de Centro da Sala (`Frascos_MesaCentro`)
 - **Estilo / Carimbo:** `MedicalPrescription` → **`RECEITUÁRIO DE CONTROLE ESPECIAL`**
-- **Título:** `NOTIFICAÇÃO DE RECEITA B1 - CONTROLE ESPECIAL`
+- **Título:** `NOTIFICAÇÃO DE RECEITA B1 — CONTROLE ESPECIAL`
 - **Texto integral:**
 ```text
 PACIENTE: Cian Nabs
 MEDICAMENTO: Clonazepam 2 mg - 02 caixas (60 comprimidos)
 
-POSOLOGIA: Tomar 01 comprimido antes de deitar.
-NÃO REPETIR SEM NOVA AVALIAÇÃO MÉDICA.
+POSOLOGIA: 01 comprimido à noite, antes de dormir.
+Não repetir sem nova consulta.
 
-DISPENSADO EM: 24/10/1994  |  FARMÁCIA CENTRAL - SANTOS/SP
+DATA: 24/10/1994  |  FARMÁCIA CENTRAL — SANTOS/SP
 ```
-- **Pensamento pós-leitura:** `"A receita venceu faz quase um ano."`
+- **Pensamento pós-leitura:** `"Essa receita é do ano passado."`
 - **Pensamento na releitura:** `"Os dois frascos tão vazios."`
 - **Origem:** `Canal420GreyboxBuilder.cs`
 
@@ -420,19 +419,17 @@ DISPENSADO EM: 24/10/1994  |  FARMÁCIA CENTRAL - SANTOS/SP
 - **Título:** `FÓRMULA MANIPULADA — REGISTRO / FARMÁCIA CENTRAL`
 - **Texto integral:**
 ```text
-PACIENTE: Cian Nabs  |  PRONTUÁRIO / PEDIDO Nº 4182
-COMPOSIÇÃO POR CÁPSULA:
-Fenproporex 25 mg + Cafeína Anidra 200 mg (30 cáps.)
+PACIENTE: Cian Nabs | PEDIDO Nº 4182
+FÓRMULA: Fenproporex 25 mg + Cafeína 200 mg (30 cápsulas)
 
-INDICAÇÃO: 01 cápsula pela manhã.
-ADVERTÊNCIA: Não associar a outros estimulantes.
-Risco de taquicardia, tremor, agitação psicomotora,
-insônia severa e confusão sensorial.
+MODO DE USAR: 01 cápsula pela manhã.
+ATENÇÃO: Não tomar com outros remédios ou café.
+Pode causar falta de ar, tremor, insônia e confusão.
 
-[O frasco está derrubado sobre a mesa, com o rótulo borrado de suor e a data ilegível.]
+DATA: --/--/--
 ```
-- **Pensamento pós-leitura:** `"Fenproporex com cafeína. A data tá raspada... parece etiqueta de farmácia ou de clínica. Preciso engolir uma cápsula antes de apagar de novo."`
-- **Pensamento na releitura:** `"Fenproporex com cafeína. O corpo corre, mas a cabeça não desliga."`
+- **Pensamento pós-leitura:** `"A data tá raspada... nem lembro de ter comprado isso. Preciso tomar uma logo."`
+- **Pensamento na releitura:** `"Fenproporex com cafeína."`
 - **Origem:** `Canal420GreyboxBuilder.cs`
 
 ---
@@ -443,18 +440,18 @@ insônia severa e confusão sensorial.
 - **Título:** `AGENDA PESSOAL`
 - **Texto integral:**
 ```text
-SÁBADO - 10 DE SETEMBRO
+SÁBADO — 10 DE SETEMBRO
 
 - Deixar as meninas na Dona Lúcia às 10h
-- Buscar o terno cinza do Cian na lavanderia até meio-dia
-- Farmácia: xarope infantil e termômetro
+- Pegar o terno cinza do Cian na lavanderia antes do meio-dia
+- Passar na farmácia (xarope e termômetro)
 - Ligar pra minha mãe à tarde
 
-Conversar com o Cian hoje de noite.
+Preciso conversar com o Cian hoje à noite.
 ```
-- **Flash de dissociação:** `10 DE SETEMBRO - EU TRANQUEI`
+- **Flash de dissociação:** `10/09 — NÃO ABRE`
 - **Pensamento pós-leitura:** `"Ela escreveu isso no sábado de manhã..."`
-- **Pensamento na releitura:** `"Ela só queria conversar comigo naquela noite."`
+- **Pensamento na releitura:** `"Ela só queria conversar."`
 - **Origem:** `Canal420GreyboxBuilder.cs`
 
 ---
@@ -467,18 +464,16 @@ Conversar com o Cian hoje de noite.
 ```text
 Cian,
 
-Deixei o seu prato tampado no forno desligado, é só esquentar.
-Fiquei te esperando até onze e meia, mas as meninas não
-aguentaram ficar acordadas.
+Deixei seu prato tampado no forno, é só esquentar.
+Esperei até onze e meia, mas as meninas já estavam caindo de sono.
 
-Quando você terminar aí, encosta a porta do corredor
-devagar. Amanhã cedo a gente conversa direito, sem grito na
-frente delas.
+Quando você terminar aí, fecha a porta devagar pra não acordar elas.
+Amanhã a gente conversa direito, sem gritar na frente das meninas.
 
 Margaret
 ```
-- **Pensamento pós-leitura:** `"Tava dobrado debaixo das pastas desde aquela sexta... Nem li o que ela pediu."`
-- **Pensamento na releitura:** `"Ela deixou o jantar no forno e foi deitar com as meninas."`
+- **Pensamento pós-leitura:** `"Tava aqui debaixo das pastas esse tempo todo... eu nem cheguei a ler."`
+- **Pensamento na releitura:** `"Eu deixei aqui sem abrir."`
 - **Origem:** `Canal420GreyboxBuilder.cs`
 
 ---
@@ -499,8 +494,8 @@ DOM 11
 SEG 12
 TER 13
 ```
-- **Pensamento pós-leitura:** `"Folha de setembro do ano passado embaixo do bloco novo... Risquei tudo até sexta-feira dia nove, e parei."`
-- **Pensamento na releitura:** `"O último risco quase furou o papel no dia nove."`
+- **Pensamento pós-leitura:** `"A folha de setembro do ano passado ainda tava aqui embaixo... nem lembrava disso."`
+- **Pensamento na releitura:** `"Não tem nada marcado depois do dia nove."`
 - **Origem:** `Canal420GreyboxBuilder.cs`
 
 ---
@@ -511,18 +506,17 @@ TER 13
 - **Título:** `SOLICITAÇÃO DE AFASTAMENTO MÉDICO - DP`
 - **Texto integral:**
 ```text
-COLABORADOR: Cian Nabs | ÁREA: Contabilidade / Auditoria
+FUNCIONÁRIO: Cian Nabs | SETOR: Contabilidade
 DATA: 14/08/1995
 
-MOTIVO INFORMADO PELO EMPREGADO:
-Crises graves de insônia há mais de quatro meses, dores constantes de cabeça,
-lapsos de memória durante conferências e tremores nas mãos ao fim do expediente.
+MOTIVO DO PEDIDO:
+Não tenho conseguido dormir direito há meses. Tenho tido dores de cabeça fortes, esquecimentos durante o trabalho e dificuldade pra lembrar que dia é.
 
-ASSINATURA DO EMPREGADO: ___________________________
-VISTO DA GERÊNCIA:        ___________________________
+ASSINATURA DO FUNCIONÁRIO: ___________________________
+VISTO DA GERÊNCIA: ___________________________
 ```
-- **Pensamento pós-leitura:** `"Escrevi isso em agosto e larguei no fundo da gaveta. Se eu entregar pro Tavares, tô na rua."`
-- **Pensamento na releitura:** `"Quem pede licença lá dentro perde a mesa."`
+- **Pensamento pós-leitura:** `"Preenchi isso em agosto e larguei aí. Se eu entregar pro Tavares, tô na rua."`
+- **Pensamento na releitura:** `"Nunca tive coragem de assinar."`
 - **Origem:** `Canal420GreyboxBuilder.cs`
 
 ---
@@ -530,27 +524,27 @@ VISTO DA GERÊNCIA:        ___________________________
 ### Documento 8 — Recorte do Jornal da Baixada (`arquivo_metalico_opc`)
 - **Dia / Local:** Casa Base (acessível no Dia 3 com `chave_arquivo_pessoal`) — Gaveta Alta do Arquivo Metálico no Escritório (`Recorte_Jornal_1994`)
 - **Estilo / Carimbo:** `NewspaperClipping` → **`RECORTE DE JORNAL`**
-- **Título:** `JORNAL DA BAIXADA - Domingo, 11 de setembro de 1994`
+- **Título:** `JORNAL DA BAIXADA — Domingo, 11 de setembro de 1994`
 - **Texto integral:**
 ```text
 MÃE E DUAS FILHAS SÃO ENCONTRADAS MORTAS NA RUA DAS ACÁCIAS
 
-A Polícia Civil investiga a morte de M. N., de 32 anos, e de suas
-duas filhas, de 6 e 8 anos, encontradas ontem à noite (10) dentro de
-um sobrado no fim da Rua das Acácias.
+A Polícia Civil investiga a morte de M. N., de 32 anos, e das duas
+filhas, de 6 e 8 anos, na noite de sábado (10), em uma casa no fim
+da Rua das Acácias.
 
-Segundo o boletim de ocorrência, vizinhos ouviram gritos por volta das
-22h30 e chamaram a PM. Ao arrombarem o quarto dos fundos, trancado pelo
-lado de fora, os policiais já encontraram as três sem vida.
+Vizinhos chamaram a PM por volta das 22h30 depois de ouvirem gritos
+e barulho vindo de dentro. Quando os policiais arrombaram a porta do
+quarto dos fundos, que estava trancada por fora, as três já estavam
+mortas. A polícia ainda não informou a causa.
 
-O marido, contador de 34 anos, permanecia em silêncio na sala quando a
-viatura chegou. O IML recolheu os corpos na madrugada e o suspeito foi
-encaminhado sob custódia para avaliação...
+O marido, contador de 34 anos, estava sentado na sala com a TV alta.
+Ele foi levado na madrugada para...
 
-[A borda inferior do recorte está rasgada e borrada de umidade.]
+//////////////////////////////
 ```
-- **Pensamento pós-leitura:** `"Conduzido sob custódia... A parte de baixo tá rasgada. Eu fui solto? Tô numa clínica? Ou nunca saí dessa sala naquela noite?"`
-- **Pensamento na releitura:** `"O pedaço onde dizia o que aconteceu comigo foi arrancado."`
+- **Pensamento pós-leitura:** `"O final foi arrancado."`
+- **Pensamento na releitura:** `"..."`
 - **Origem:** `Canal420PropDetailBuilders.cs`
 
 ---
@@ -781,7 +775,7 @@ Todos os textos desenhados em texturas procedurais geradas por **`Canal420PrintD
 | Material / Textura | Onde Aparece | Texto Impresso |
 |---|---|---|
 | `M_Print_Calendario_Out1995` (`Tex_Calendario_Out1995`) | Parede do Escritório (folha superior) | `OUTUBRO` / `1995` / `D S T Q Q S S` / dias `1` a `31` *(1–28 riscados com X, 29 circulado)* |
-| `M_Print_Calendario_Set1994` (`Tex_Calendario_Set1994`) | Parede do Escritório (folha inferior revelada no Dia 3) | `SETEMBRO / 1994` / `D S T Q Q S S` / dias `01` a `30` *(01–09 riscados com X, 10 em diante em branco)* / rodapé `ULTIMA FOLHA GUARDADA` |
+| `M_Print_Calendario_Set1994` (`Tex_Calendario_Set1994`) | Parede do Escritório (folha inferior revelada no Dia 3) | `SETEMBRO / 1994` / `D S T Q Q S S` / dias `01` a `30` *(01–09 riscados com X, 10 em diante em branco)* / rodapé `SANTOS - SP  1994` |
 
 ### 5.2 Medicamentos, Frascos, Cartelas e Caixas (`Canal420PrintDetailsGenerator.cs`)
 | Material / Textura | Onde Aparece | Texto Impresso |
@@ -798,7 +792,7 @@ Todos os textos desenhados em texturas procedurais geradas por **`Canal420PrintD
 | `M_Print_Fita_Cassete` (`Tex_Fita_Cassete_Etiqueta`) | Fita cassete na pia do banheiro (Dia 2) | `MICROCASSETE  C-60` / `SEC. - SET/94` / `GRAVACAO AUTOMATICA` / `LADO A   REC 10/09` |
 | `M_Print_Lombada_VHS_0` (`Tex_Lombada_VHS_0`) | Fita VHS no Rack da TV | `VHS` / `NATAL 93 - PRAIA` |
 | `M_Print_Lombada_VHS_1` (`Tex_Lombada_VHS_1`) | Fita VHS no Rack da TV | `VHS` / `ANIV. MENINAS 94` |
-| `M_Print_Lombada_VHS_2` (`Tex_Lombada_VHS_2`) | Fita VHS no Rack da TV | `VHS` / `GRAVACAO TV / 94` |
+| `M_Print_Lombada_VHS_2` (`Tex_Lombada_VHS_2`) | Fita VHS no Rack da TV | `VHS` / `NAO APAGAR / 94` |
 | `M_Print_Pilha_AA` (`Tex_Pilha_AA`) | Pilhas AA na gaveta da cozinha (Dia 1) | `+` / `1.5V AA` / `ALCALINA` / `-` |
 | `M_Print_Mostrador_Relogio` (`Tex_Mostrador_Relogio_Analogico`) | Despertador do Quarto / Relógio da Estante | Números `1` a `12` / `QUARTZ` / `1994` |
 | `M_Print_Clock_Digit_*` | Dígitos LED 7-segmentos (relógios digitais / aparelhos) | Dígitos `2`, `3`, `4`, `0` e `:` |
@@ -817,11 +811,11 @@ Todos os textos desenhados em texturas procedurais geradas por **`Canal420PrintD
 | Material / Textura | Onde Aparece | Texto Impresso na Face 3D |
 |---|---|---|
 | `M_Print_Memorando_Tavares` | Escrivaninha do Escritório (Dia 1) | `COMUNICACAO INTERNA 048/95` / `PARA: CIAN NABS (CONTABIL)` / `DE:   A. TAVARES (GERENCIA)` / carimbo `URGENTE` / `SEGUNDA 08H00 NA MINHA MESA.` |
-| `M_Print_Agenda_Margaret` | Criado-mudo do Quarto (Dia 3) | `SAB  10/SET` / `- MENINAS NA DONA LUCIA 10H` / `- TERNO CINZA LAVANDERIA` / `- FARMACIA: XAROPE` / `- LIGAR P/ MINHA MAE` / `CONVERSAR COM O CIAN HOJE.` |
+| `M_Print_Agenda_Margaret` | Criado-mudo do Quarto (Dia 3) | `SAB  10/SET` / `- MENINAS NA DONA LUCIA 10H` / `- TERNO CINZA LAVANDERIA` / `- FARMACIA: XAROPE` / `- LIGAR P/ MAE` / `CONVERSAR COM O CIAN HOJE.` |
 | `M_Print_Bilhete_Margaret` | Escrivaninha do Escritório (Dia 3) | `CIAN,` / *(linhas cursivas simuladas)* / `MARGARET` |
 | `M_Print_Lista_Geladeira` | Porta da Geladeira | `LISTA DA SEMANA` / `- LEITE` / `- MACA` / `- SABONETE INF.` / `- PAO DE FORMA` / `- CAFE` |
 | `M_Print_Aviso_Conta` | Porta da Geladeira | `AVISO DE DEBITO` / `CONTA LUZ / AGUA` / carimbo `VENCIDA` |
-| `M_Print_Jornal_Baixada_1994` | Gaveta Alta do Arquivo Metálico (Escritório) | `JORNAL DA BAIXADA` / `DOM, 11 DE SETEMBRO DE 1994` / `N.614` / `TRAGEDIA NA RUA DAS ACACIAS` / `POLICIA ISOLOU RESIDENCIA NA NOITE DE SABADO (10/09)` / legenda `FACHADA ISOLADA - R. ACACIAS` / subtítulos `VIZINHOS RELATAM SILENCIO`, `O MARIDO FOI CONDUZIDO NA MADRUGADA PARA...`, `INQUERITO EM SEGREDO` |
+| `M_Print_Jornal_Baixada_1994` | Gaveta Alta do Arquivo Metálico (Escritório) | `JORNAL DA BAIXADA` / `DOM, 11 DE SETEMBRO DE 1994` / `N.614` / `TRAGEDIA NA RUA DAS ACACIAS` / `POLICIA ISOLOU CASA NA NOITE DE SABADO (10/09)` / legenda `FACHADA ISOLADA - R. ACACIAS` / subtítulos `PORTA TRANCADA POR FORA`, `LEVADO NA MADRUGADA PARA...`, `CAUSA NAO INFORMADA` |
 | `M_Print_Envelope_Carta` | Aparador, Mesa da Copa, Rack da TV, Capacho | Selo `95` / `CIAN NABS` / `RUA DAS ACACIAS, 420` / carimbo `VENCIDO` |
 | `M_Print_Desenho_Familia` | Parede / mesa do Quarto das Filhas | `MINHA FAMILIA` *(o segundo desenho, `Tex_Desenho_Casa`, é apenas ilustração sem texto)* |
 
@@ -829,10 +823,10 @@ Todos os textos desenhados em texturas procedurais geradas por **`Canal420PrintD
 Além de construir as malhas detalhadas que recebem os rótulos acima, `Canal420PropDetailBuilders.cs` define diretamente os textos interativos do **Arquivo Metálico do Escritório** (`BuildOfficeFileCabinet`):
 - **Gaveta do Meio (`arquivo_gaveta_media` / `arquivo_gaveta_media_opc`):**
   - Prompts: `Abrir a gaveta do meio do arquivo` / `Fechar a gaveta do meio` / `Folhear as pastas`
-  - Falas: `"Declarações de 92 e 93. Coisa antiga do escritório, tudo em ordem."` | *Rep:* `"Só arquivo antigo."`
+  - Falas: `"Papéis de 92 e 93. Tá tudo em ordem aqui."` | *Rep:* `"Só faltam as coisas de 94."`
 - **Gaveta Alta Trancada (`arquivo_gaveta_alta`):**
   - Prompts: `Tentar abrir a gaveta alta do arquivo` / `Destrancar e abrir a gaveta alta` / `Abrir a gaveta alta do arquivo` / `Fechar a gaveta alta do arquivo`
-  - Falas: `"Não abre. A fechadura tá toda riscada, parece que tentei forçar com alguma coisa."` (trancada) / `"A chavinha do bolso dela serviu certinho."` (destrancando)
+  - Falas: `"Não abre. A fechadura tá toda riscada."` (trancada) / `"A chave do bolso dela serviu."` (destrancando)
 - **Recorte de Jornal 1994 (`Recorte_Jornal_1994` / `arquivo_metalico_opc`):**
   - Prompt: `Ler o recorte de jornal guardado`
   - Documento completo listado em [Documento 8 — Recorte do Jornal da Baixada](#documento-8--recorte-do-jornal-da-baixada-arquivo_metalico_opc).
@@ -840,7 +834,7 @@ Além de construir as malhas detalhadas que recebem os rótulos acima, `Canal420
 ### 5.7 Textos na Tela da TV CRT — OSD e Tickers (`ProceduralCRTFeed.cs`)
 | Modo / Canal | Carimbo OSD Superior | Textos e Tickers na Tela |
 |---|---|---|
-| **Canal 04 (`BroadcastChannel04`)** | `CH 04` | `AO VIVO` / `JORNAL` / `NOITE` / ticker: `BAIXADA - CORTES NO SETOR E BALANCOS DA SEMANA   SANTOS 19C` |
-| **Canal 09 (`BroadcastChannel09`)** | `CH 09` | `BAIXADA 19C  CHUVA E NEVOEIRO` |
-| **Canal 17 (`BroadcastChannel17`)** | `CH 17` | `SO HOJE` / ticker: `LIGUE JA 0800-1995   ULTIMAS UNIDADES` / tela de relógio: `HORA CERTA` |
+| **Canal 04 (`BroadcastChannel04`)** | `CH 04` | `AO VIVO` / `JORNAL` / `NOITE` / ticker: `BAIXADA - CORTES NO SETOR ADMINISTRATIVO   SANTOS 19C` |
+| **Canal 09 (`BroadcastChannel09`)** | `CH 09` | `BAIXADA 19C  NEBLINA NA SERRA` |
+| **Canal 17 (`BroadcastChannel17`)** | `CH 17` | `SO HOJE` / ticker: `LIGUE 0800-1995   ULTIMAS UNIDADES` / tela de relógio: `HORA CERTA` |
 | **Plantão 1994 / Bleed (`Canal420Ghost` & Plantão Dia 2)** | `-- --` *(o número `420` nunca aparece no OSD)* | `PLANTAO` / `10/09/94  23:42` / `R. ACACIAS` |

@@ -680,7 +680,7 @@ namespace Canal420.Events
                         }
                         if (InteractionSystem.Instance != null)
                         {
-                            InteractionSystem.Instance.ShowSubtitle("Tá fora da tomada...", 3.4f);
+                            InteractionSystem.Instance.ShowSubtitle("Mas... ela tá fora da tomada.", 3.6f);
                         }
                     }
                 }

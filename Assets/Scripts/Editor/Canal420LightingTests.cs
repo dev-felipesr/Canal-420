@@ -27,7 +27,7 @@ namespace Canal420.EditorTools
     [TestFixture]
     public class Canal420LightingTests
     {
-        private const string SessionKey = "Canal420_LightingTests_Verified_v59";
+        private const string SessionKey = "Canal420_LightingTests_Verified_v60";
         private static int pendingRebuildRetries = 10;
 
         static Canal420LightingTests()
@@ -82,7 +82,7 @@ namespace Canal420.EditorTools
                 && margaretTr.GetComponent<Animator>() != null
                 && margaretTr.GetComponent<Animator>().runtimeAnimatorController != null
                 && !string.IsNullOrEmpty(currentBottleDoc)
-                && currentBottleDoc.Contains("rótulo borrado de suor")
+                && currentBottleDoc.Contains("DATA: --/--/--")
                 && !currentBottleDoc.Contains("Restam apenas duas");
             GameObject filhasRoot = FindInactiveRoot("Quarto_Filhas");
             Transform perfilBoxTr = FindChildRecursive(casa.transform, "Perfil_Porta_Box");
@@ -109,7 +109,7 @@ namespace Canal420.EditorTools
                     }
                 }
             }
-            if (casa.transform.Find("Greybox_Arquitetura_v46") == null || !phase3SceneBuilt || !phase4SceneBuilt || !audioReady || wiredTv == null || probes == null || probes.Length != 8 || probes[0] == null)
+            if (casa.transform.Find("Greybox_Arquitetura_v47") == null || !phase3SceneBuilt || !phase4SceneBuilt || !audioReady || wiredTv == null || probes == null || probes.Length != 8 || probes[0] == null)
             {
                 if (pendingRebuildRetries-- > 0)
                 {
@@ -197,7 +197,7 @@ namespace Canal420.EditorTools
         {
             GameObject casa = GameObject.Find("Casa_Base");
             Assert.IsNotNull(casa, "Casa_Base missing from active scene.");
-            Assert.IsNotNull(casa.transform.Find("Greybox_Arquitetura_v46"), "SampleScene is not yet rebuilt to Greybox_Arquitetura_v46.");
+            Assert.IsNotNull(casa.transform.Find("Greybox_Arquitetura_v47"), "SampleScene is not yet rebuilt to Greybox_Arquitetura_v47.");
 
             Assert.IsNull(RenderSettings.skybox, "RenderSettings.skybox must be null in closed indoor horror scene.");
             Assert.IsNull(RenderSettings.sun, "RenderSettings.sun must be null.");
@@ -1251,8 +1251,8 @@ namespace Canal420.EditorTools
             Assert.IsNotNull(bottleDoc, "Stimulant bottle label document body must not be null.");
             Assert.IsTrue(bottleDoc.Contains("Fenproporex 25 mg") && bottleDoc.Contains("Cafeína"),
                 "Stimulant bottle label document must specify Fenproporex 25 mg + Cafeína.");
-            Assert.IsTrue(bottleDoc.Contains("rótulo borrado de suor"),
-                "Stimulant bottle label document must use the updated timeless closing description.");
+            Assert.IsTrue(bottleDoc.Contains("DATA: --/--/--"),
+                "Stimulant bottle label document must use the updated timeless redacted date.");
             Assert.IsFalse(bottleDoc.Contains("Restam apenas duas") || bottleDoc.Contains("duas cápsulas soltas"),
                 "Stimulant bottle label document must stay timeless even after swallowing capsules.");
 
@@ -1839,15 +1839,15 @@ namespace Canal420.EditorTools
             InspectableObject rackInsp = rackInspTr.GetComponent<InspectableObject>();
             Assert.IsNotNull(rackInsp, "Compartimento_Rack_Interagir must carry an InspectableObject.");
             string rackSub = GetPrivateField<string>(rackInsp, "thoughtSubtitle") ?? string.Empty;
-            Assert.IsTrue(rackSub.Contains("no fundo do rack") && !rackSub.Contains("gaveta do fundo"),
+            Assert.IsTrue(rackSub.Contains("fitas velhas") && !rackSub.Contains("gaveta do fundo"),
                 $"Rack subtitle still references wrong drawer wording: '{rackSub}'");
 
             Transform wdTr = FindChildRecursive(casa.transform, "Portas_GuardaRoupa_Interagir");
             Assert.IsNotNull(wdTr, "Portas_GuardaRoupa_Interagir not found.");
             AnimatedContainerInteractable wdAnim = wdTr.GetComponent<AnimatedContainerInteractable>();
             string ajarThought = GetPrivateField<string>(wdAnim, "day2AjarCloseThought");
-            Assert.IsTrue(ajarThought.Contains("ontem... por que") && !ajarThought.Contains("ontem...por que"),
-                $"Wardrobe Day 2 ajar thought missing space after ellipsis: '{ajarThought}'");
+            Assert.IsTrue(!string.IsNullOrWhiteSpace(ajarThought) && ajarThought.Contains("fechado") && !ajarThought.Contains("ontem...por que"),
+                $"Wardrobe Day 2 ajar thought invalid: '{ajarThought}'");
 
             GameObject d1Root = FindInactiveRoot("Props_Dia1");
             Assert.IsNotNull(d1Root, "Props_Dia1 not found.");
